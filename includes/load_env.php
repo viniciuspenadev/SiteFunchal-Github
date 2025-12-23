@@ -10,10 +10,19 @@ function loadEnv($path)
         return false;
     }
 
-    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $content = file_get_contents($path);
+    if ($content === false) {
+        return false;
+    }
+
+    // Split by newlines (handle both Unix and Windows line endings)
+    $lines = preg_split('/\r\n|\r|\n/', $content);
+
     foreach ($lines as $line) {
-        // Skip comments
-        if (strpos(trim($line), '#') === 0) {
+        $line = trim($line);
+
+        // Skip empty lines and comments
+        if (empty($line) || strpos($line, '#') === 0) {
             continue;
         }
 
@@ -26,10 +35,10 @@ function loadEnv($path)
             // Remove quotes if present
             $value = trim($value, '"\'');
 
-            // Set environment variable
-            putenv("$key=$value");
+            // Set environment variable (order matters on Windows!)
             $_ENV[$key] = $value;
             $_SERVER[$key] = $value;
+            putenv("$key=$value");
         }
     }
 
