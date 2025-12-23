@@ -10,7 +10,7 @@ RewriteRule ^en/([^/]+)/?$ $1.php?lang=en [L,QSA]
 RewriteRule ^en/?$ index.php?lang=en [L,QSA]
 
 # 4. Security: Block access to protected files
-<FilesMatch "^(config|products_data)\.php$">
+<FilesMatch "^(config|products_data|load_env)\.php$">
     Order Allow,Deny
     Deny from all
 </FilesMatch>
