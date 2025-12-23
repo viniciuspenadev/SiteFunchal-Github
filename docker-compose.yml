@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: funchal-pescados
+    ports:
+      - "8080:80"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-flash-latest}
+    volumes:
+      # Mount for development - comment out for production
+      - ./:/var/www/html/
+    restart: unless-stopped

@@ -1,0 +1,22 @@
+# Environment Variables (NEVER commit this file!)
+.env
+
+# System Files
+.DS_Store
+Thumbs.db
+*.log
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# PHP
+vendor/
+composer.phar
+
+# Cache
+*.cache
+cache/

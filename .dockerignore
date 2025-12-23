@@ -1,0 +1,29 @@
+# Git files
+.git
+.gitignore
+
+# Environment files
+.env
+
+# Documentation
+*.md
+
+# Docker files
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# PHP
+vendor/
+composer.lock

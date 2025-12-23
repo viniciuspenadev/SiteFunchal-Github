@@ -1,0 +1,19 @@
+RewriteEngine On
+
+# 1. Translate /en/PAGE to PAGE.php?lang=en
+RewriteRule ^en/([^/]+)\.php$ $1.php?lang=en [L,QSA]
+
+# 2. Translate /en/PAGE/ to PAGE.php?lang=en
+RewriteRule ^en/([^/]+)/?$ $1.php?lang=en [L,QSA]
+
+# 3. Translate root /en/ to index.php?lang=en
+RewriteRule ^en/?$ index.php?lang=en [L,QSA]
+
+# 4. Security: Block access to protected files
+<FilesMatch "^(config|products_data)\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# 5. Standard rules (remove .php extension optional)
+# (Adjust as needed for the rest of the site)
