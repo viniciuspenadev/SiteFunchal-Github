@@ -1,8 +1,8 @@
 <?php
 return [
     // SEO
-    'meta_title_home' => 'Funchal Seafoods | Premium Distributor',
-    'meta_desc_home' => 'The best seafood distributor in São Paulo.',
+    'meta_title_home' => 'Funchal Pescados | Premium Fish and Seafood Distributor',
+    'meta_desc_home' => 'The leading premium fish and seafood distributor in São Paulo. Supplying salmon, shrimp and cod with elite logistics for high-end gastronomy.',
 
     // Navbar
     'nav_home' => 'Home',
@@ -10,6 +10,8 @@ return [
     'nav_logistics' => 'Logistics',
     'nav_about' => 'About Us',
     'nav_contact' => 'Contact',
+    'nav_careers' => 'Careers',
+    'nav_blog' => 'Blog',
     'nav_catalog' => 'Catalog',
 
     // Hero
@@ -64,6 +66,7 @@ return [
     'wa_desc' => 'Join over 500 restaurants in São Paulo and receive weekly offers, fresh news, and special prices directly on your WhatsApp.',
     'wa_placeholder' => 'Your WhatsApp (Area Code + Number)',
     'wa_btn' => 'I Want Access',
+    'wa_floating_label' => 'Talk to a Consultant',
     'wa_security' => 'Your data is 100% secure with us.',
 
     // Footer
@@ -74,6 +77,53 @@ return [
     'footer_news_placeholder' => 'Your email',
     'footer_news_btn' => 'Subscribe',
     'footer_rights' => '© 2024 Funchal Seafoods. All rights reserved.',
+
+    // Blog Home section
+    'blog_home_tag' => 'Funchal Insights',
+    'blog_home_title' => 'News and Trends',
+    'blog_home_desc' => 'Stay updated with the latest news from the seafood market, conservation tips, and gastronomic secrets.',
+    'blog_read_more' => 'Read Article',
+    'blog_read_full' => 'Read Full Article',
+    'blog_load_more' => 'Load More Articles',
+
+    // Careers / Work with Us
+    'careers_tag' => 'Careers & Opportunities',
+    'careers_title' => 'Work with Us',
+    'careers_desc' => 'Are you looking for excellence and want to be part of a history of tradition and quality? Come and join the Funchal Seafoods team.',
+    'careers_vagas_title' => 'Open Positions',
+    'careers_vagas_desc' => 'We are always looking for talents who share our commitment to quality. Check out the open positions below.',
+    'careers_no_vagas' => 'No open positions at the moment.',
+    'careers_talent_bank' => 'Talent Bank',
+    'careers_talent_bank_desc' => 'Didn\'t find the ideal position? Send your resume to our talent bank. We are always looking for exceptional professionals.',
+    'careers_send_cv' => 'Send Resume',
+    'careers_questions' => 'Questions about the process? Contact us by email',
+
+    // Job Individual
+    'job_back' => 'Back to Jobs',
+    'job_published' => 'Published on',
+    'job_apply_now' => 'Apply Now',
+    'job_about' => 'About the Position',
+    'job_reqs' => 'Job Requirements',
+    'job_benefits' => 'Benefits',
+    'job_form_title' => 'Apply for this position',
+    'job_form_desc' => 'Fill out the form below and attach your resume. Our HR team will contact you if your profile fits the opportunity.',
+    'job_form_name' => 'Full Name *',
+    'job_form_phone' => 'Phone / WhatsApp *',
+    'job_form_email' => 'Email *',
+    'job_form_linkedin' => 'LinkedIn (Optional)',
+    'job_form_cv' => 'Resume (PDF or DOCX) *',
+    'job_form_cv_help' => 'Click to upload or drag your file',
+    'job_form_cv_max' => 'Maximum 5MB',
+    'job_form_letter' => 'Cover Letter (Optional)',
+    'job_form_letter_placeholder' => 'Briefly tell us why you are ideal for this position...',
+    'job_form_send' => 'Send Application',
+    'job_form_security' => 'Your data is secure and will only be used for this selection process.',
+    'job_summary_title' => 'Opportunity Summary',
+    'job_summary_workload' => 'Workload',
+    'job_summary_model' => 'Work Model',
+    'job_summary_model_inperson' => 'In-person',
+    'job_summary_location' => 'Location',
+    'job_summary_share' => 'Share Position',
 
     // Categories
     'cat_all' => 'All',
@@ -202,4 +252,13 @@ return [
     'chef_subtitle' => 'Your culinary assistant specializing in seafood.',
     'chef_greeting' => 'Hello! I am Chef Funchal. How can I help you today? I can suggest recipes, wine pairings, or preparation tips for our products.',
     'chef_placeholder' => 'Ask something... (e.g. "How do I make a shrimp risotto?")',
+
+    // Post page specifics
+    'post_reading_time' => 'reading',
+    'post_by' => 'By',
+    'post_author_role' => 'Seafood Specialist',
+    'post_related_tags' => 'Related Tags',
+    'post_news_title' => 'Receive Exclusive Insights',
+    'post_news_desc' => 'Subscribe to our newsletter to receive market trends, exclusive recipes and Funchal Seafoods news directly in your email.',
+    'post_continue_reading' => 'Continue Reading',
 ];

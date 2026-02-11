@@ -10,6 +10,28 @@ $products = include 'includes/products_data.php'; // Load Data
 
 <head>
     <?php include 'includes/seo.php'; ?>
+    <!-- Products Catalog Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        <?php
+        $count = 1;
+        foreach ($products as $prod):
+            $name = __('prod_' . $prod['id'] . '_name');
+            ?>
+                    {
+                      "@type": "ListItem",
+                      "position": <?php echo $count++; ?>,
+                      "url": "<?php echo url('produtos'); ?>",
+                      "name": "<?php echo $name; ?>",
+                      "image": "<?php echo $prod['image']; ?>"
+                    }<?php echo ($count <= count($products)) ? ',' : ''; ?>
+        <?php endforeach; ?>
+      ]
+    }
+    </script>
 </head>
 
 <body class="font-sans antialiased text-white bg-slate-900">
@@ -27,12 +49,12 @@ $products = include 'includes/products_data.php'; // Load Data
 
             <!-- Products Header -->
             <div class="text-center mb-12 animate-fade-in-up">
-                <span class="text-[#bb9b6b] font-bold tracking-wider text-sm uppercase block mb-2">
-                    <?php echo __('prod_exclusive_label'); // Reuse or new key ?>
-                </span>
-                <h1 class="text-4xl md:text-5xl font-serif font-bold mb-6"><?php echo __('nav_products'); ?></h1>
-                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
-                    <?php echo __('prod_catalog_desc'); // Reuse ?>
+                <span
+                    class="text-[#bb9b6b] font-bold tracking-widest uppercase text-sm mb-4 block animate-fade-in"><?php echo __('nav_catalog'); ?></span>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
+                    <?php echo __('prod_catalog_title'); ?></h1>
+                <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    <?php echo __('prod_catalog_desc'); ?>
                 </p>
             </div>
 
@@ -69,7 +91,8 @@ $products = include 'includes/products_data.php'; // Load Data
                     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <i data-lucide="search" class="h-5 w-5 text-slate-400"></i>
                     </div>
-                    <input type="text" id="search-input" placeholder="Buscar produtos..."
+                    <input type="text" id="search-input"
+                        placeholder="<?php echo __('prod_search_placeholder', 'Buscar produtos...'); ?>"
                         class="block w-full pl-10 pr-3 py-2 border border-slate-600 rounded-lg leading-5 bg-slate-700/50 text-slate-200 placeholder-slate-400 focus:outline-none focus:bg-slate-700 focus:border-[#bb9b6b] focus:ring-1 focus:ring-[#bb9b6b] sm:text-sm transition-all shadow-inner">
                 </div>
             </div>
@@ -96,7 +119,7 @@ $products = include 'includes/products_data.php'; // Load Data
                         data-pairing="<?php echo __($pairingKey); ?>" data-desc="<?php echo $desc; ?>">
 
                         <div class="relative h-56 overflow-hidden">
-                            <img src="<?php echo $prod['image']; ?>" alt="<?php echo $name; ?>" loading="lazy"
+                            <img src="<?php echo asset_url($prod['image']); ?>" alt="<?php echo $name; ?>" loading="lazy"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
 
                             <!-- Badges -->

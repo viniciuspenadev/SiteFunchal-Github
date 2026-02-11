@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /lang/
+Disallow: /data/
+
+# Sitemap location
+Sitemap: https://funchalpescados.com.br/sitemap.xml

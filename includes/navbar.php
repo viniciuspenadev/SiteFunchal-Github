@@ -13,8 +13,8 @@ function isActive($pageName)
             <!-- Logo -->
             <div class="flex-shrink-0 flex items-center gap-2">
                 <a href="<?php echo url('index.php'); ?>" class="flex items-center">
-                    <img src="https://funchalpescados.com.br/wp-content/uploads/2023/06/funchal-distribuidora-pescados-sp.png"
-                        alt="Funchal Pescados" class="h-16 w-auto"
+                    <img src="<?php echo asset_url('assets/img/funchalpescados.webp'); ?>" alt="Funchal Pescados"
+                        class="h-24 w-auto"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <span
                         class="hidden text-2xl font-serif font-bold text-white tracking-widest border-2 border-[#bb9b6b] px-2 py-1">FUNCHAL</span>
@@ -25,24 +25,28 @@ function isActive($pageName)
             <div class="hidden md:flex items-center space-x-8">
                 <a href="<?php echo url('index.php'); ?>"
                     class="text-sm font-medium transition-colors <?php echo isActive('home'); ?>"><?php echo __('nav_home'); ?></a>
-                <a href="<?php echo url('chef_ia.php'); ?>"
+                <!-- <a href="<?php echo url('chef_ia.php'); ?>"
                     class="text-sm font-medium px-4 py-2 rounded bg-[#bb9b6b] text-white hover:bg-[#a68859] transition-colors">Chef
-                    IA</a>
+                    IA</a> -->
                 <a href="#"
                     class="text-sm font-medium transition-colors <?php echo isActive('about'); ?>"><?php echo __('nav_about'); ?></a>
                 <a href="<?php echo url('produtos.php'); ?>"
                     class="text-sm font-medium transition-colors <?php echo isActive('products'); ?>"><?php echo __('nav_products'); ?></a>
                 <a href="<?php echo url('contato.php'); ?>"
                     class="text-sm font-medium transition-colors <?php echo isActive('contact'); ?>"><?php echo __('nav_contact'); ?></a>
+                <a href="<?php echo url('trabalhe-conosco.php'); ?>"
+                    class="text-sm font-medium transition-colors <?php echo isActive('trabalhe-conosco'); ?>"><?php echo __('nav_careers'); ?></a>
+                <a href="<?php echo url('blog.php'); ?>"
+                    class="text-sm font-medium transition-colors <?php echo isActive('blog'); ?>"><?php echo __('nav_blog'); ?></a>
 
                 <!-- Language Switcher -->
                 <div class="flex items-center gap-3 border-l border-slate-700 pl-6 ml-2">
-                    <a href="?lang=pt"
+                    <a href="<?php echo url($_SERVER['PHP_SELF'], 'pt'); ?>"
                         class="hover:opacity-80 transition-opacity <?php echo current_lang() === 'pt' ? 'opacity-100 scale-110' : 'opacity-50 grayscale hover:grayscale-0'; ?>"
                         title="Português">
                         <img src="https://flagcdn.com/w40/br.png" alt="PT-BR" class="w-6 h-auto rounded-sm shadow-sm">
                     </a>
-                    <a href="?lang=en"
+                    <a href="<?php echo url($_SERVER['PHP_SELF'], 'en'); ?>"
                         class="hover:opacity-80 transition-opacity <?php echo current_lang() === 'en' ? 'opacity-100 scale-110' : 'opacity-50 grayscale hover:grayscale-0'; ?>"
                         title="English">
                         <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-6 h-auto rounded-sm shadow-sm">
@@ -64,21 +68,27 @@ function isActive($pageName)
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <a href="<?php echo url('index.php'); ?>"
                 class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'home' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_home'); ?></a>
-            <a href="<?php echo url('chef_ia.php'); ?>"
-                class="block px-3 py-2 rounded-md text-base font-medium bg-[#bb9b6b] text-white">Chef IA</a>
+            <!-- <a href="<?php echo url('chef_ia.php'); ?>"
+                class="block px-3 py-2 rounded-md text-base font-medium bg-[#bb9b6b] text-white">Chef IA</a> -->
             <a href="#"
                 class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'about' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_about'); ?></a>
             <a href="<?php echo url('produtos.php'); ?>"
                 class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'products' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_products'); ?></a>
             <a href="<?php echo url('contato.php'); ?>"
                 class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'contact' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_contact'); ?></a>
+            <a href="<?php echo url('trabalhe-conosco.php'); ?>"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'trabalhe-conosco' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_careers'); ?></a>
+            <a href="<?php echo url('blog.php'); ?>"
+                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'blog' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_blog'); ?></a>
 
             <!-- Mobile Language Switcher (Simple) -->
             <div class="flex items-center gap-4 px-3 py-4 border-t border-slate-700 mt-2">
-                <a href="?lang=pt" class="flex items-center gap-2 text-gray-300 hover:text-white">
+                <a href="<?php echo url($_SERVER['PHP_SELF'], 'pt'); ?>"
+                    class="flex items-center gap-2 text-gray-300 hover:text-white">
                     <img src="https://flagcdn.com/w40/br.png" alt="PT-BR" class="w-5 h-auto rounded-sm"> Português
                 </a>
-                <a href="?lang=en" class="flex items-center gap-2 text-gray-300 hover:text-white">
+                <a href="<?php echo url($_SERVER['PHP_SELF'], 'en'); ?>"
+                    class="flex items-center gap-2 text-gray-300 hover:text-white">
                     <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-5 h-auto rounded-sm"> English
                 </a>
             </div>

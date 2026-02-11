@@ -4,8 +4,8 @@
             <!-- Brand -->
             <div>
                 <div class="flex items-center gap-2 mb-6">
-                    <img src="https://funchalpescados.com.br/wp-content/uploads/2023/06/funchal-distribuidora-pescados-sp.png"
-                        alt="Funchal Pescados" class="h-12 w-auto"
+                    <img src="<?php echo asset_url('assets/img/funchalpescados.webp'); ?>" alt="Funchal Pescados"
+                        class="h-24 w-auto"
                         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                     <span
                         class="hidden text-xl font-serif font-bold text-white tracking-widest border border-[#bb9b6b] px-2 py-1">FUNCHAL</span>
@@ -26,6 +26,12 @@
                     </li>
                     <li><a href="#" class="hover:text-[#bb9b6b] transition-colors"><?php echo __('nav_contact'); ?></a>
                     </li>
+                    <li><a href="<?php echo url('trabalhe-conosco.php'); ?>"
+                            class="hover:text-[#bb9b6b] transition-colors">Trabalhe Conosco</a>
+                    </li>
+                    <li><a href="<?php echo url('blog.php'); ?>" class="hover:text-[#bb9b6b] transition-colors">Blog &
+                            Insights</a>
+                    </li>
                 </ul>
             </div>
             <!-- Contact -->
@@ -34,7 +40,7 @@
                 <ul class="space-y-4 text-slate-400 text-sm">
                     <li class="flex items-start gap-3">
                         <i data-lucide="map-pin" class="w-5 h-5 text-[#bb9b6b] shrink-0"></i>
-                        <span>Tatuapé, São Paulo - SP</span>
+                        <span>R. Cândido Vale, 319 - Tatuapé<br>São Paulo - SP, 03068-010</span>
                     </li>
                     <li class="flex items-start gap-3">
                         <i data-lucide="mail" class="w-5 h-5 text-[#bb9b6b] shrink-0"></i>
@@ -68,6 +74,9 @@
         </div>
     </div>
 </footer>
+
+<?php include 'includes/whatsapp_btn.php'; ?>
+
 <script>
     lucide.createIcons();
 </script>

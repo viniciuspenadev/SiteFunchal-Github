@@ -20,7 +20,8 @@ $isTransparent = true; // For transparent navbar on hero
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="<?php echo asset_url('assets/img/1355.png'); ?>" alt="Funchal Pescados Hero"
+            <img src="<?php echo asset_url('assets/img/1355.png'); ?>"
+                alt="Funchal Pescados - Distribuidora de Pescados e Frutos do Mar Premium em São Paulo"
                 class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div>
         </div>
@@ -46,7 +47,7 @@ $isTransparent = true; // For transparent navbar on hero
                     <?php echo __('hero_desc'); ?>
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="produtos.php"
+                    <a href="<?php echo url('produtos.php'); ?>"
                         class="bg-[#bb9b6b] hover:bg-[#a68859] text-white px-8 py-4 rounded-sm font-bold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">
                         <?php echo __('hero_cta_catalog'); ?>
                         <i data-lucide="arrow-right" class="w-5 h-5"></i>
@@ -153,34 +154,34 @@ $isTransparent = true; // For transparent navbar on hero
                 ?>
 
                 <!-- Main Feature (Salmon) - Spans 2 cols, 2 rows -->
-                <a href="produtos.php"
+                <a href="<?php echo url('produtos.php'); ?>"
                     class="relative group overflow-hidden rounded-2xl cursor-pointer col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[300px]">
                     <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=2070&auto=format&fit=crop"
-                        alt="Salmão Premium"
+                        alt="Funchal Pescados - Salmão Chileno Premium para Alta Gastronomia"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <?php echo renderOverlay(__('prod_salmon_title'), __('prod_salmon_sub')); ?>
                 </a>
 
                 <!-- Secondary Feature 1 (Lobster) - Spans 2 cols, 1 row -->
-                <a href="produtos.php"
+                <a href="<?php echo url('produtos.php'); ?>"
                     class="relative group overflow-hidden rounded-2xl cursor-pointer col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-1 min-h-[250px]">
                     <img src="https://plus.unsplash.com/premium_photo-1719611418025-07c08bf00a49?q=80&w=687&auto=format&fit=crop"
-                        alt="Lagosta"
+                        alt="Lagosta Inteira Fresca - Funchal Pescados Premium"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <?php echo renderOverlay(__('prod_lobster_title'), __('prod_lobster_sub')); ?>
                 </a>
 
                 <!-- Secondary Feature 2 (Octopus) - Spans 1 col, 1 row -->
-                <a href="produtos.php"
+                <a href="<?php echo url('produtos.php'); ?>"
                     class="relative group overflow-hidden rounded-2xl cursor-pointer col-span-1 lg:col-span-1 lg:row-span-1 min-h-[250px]">
                     <img src="https://images.unsplash.com/photo-1485827329522-c625acce0067?q=80&w=1170&auto=format&fit=crop"
-                        alt="Polvo"
+                        alt="Polvo Espanhol Premium - Importação Direta Funchal"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <?php echo renderOverlay(__('prod_octopus_title'), __('prod_octopus_sub')); ?>
                 </a>
 
                 <!-- CTA Card - Spans 1 col, 1 row -->
-                <a href="produtos.php"
+                <a href="<?php echo url('produtos.php'); ?>"
                     class="relative group overflow-hidden rounded-2xl cursor-pointer col-span-1 lg:col-span-1 lg:row-span-1 bg-slate-900 flex flex-col items-center justify-center text-center p-6 border border-slate-800 hover:border-[#bb9b6b] transition-colors duration-300">
                     <div
                         class="bg-[#bb9b6b]/10 p-4 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -240,6 +241,75 @@ $isTransparent = true; // For transparent navbar on hero
     </section>
 
 
+
+
+    <!-- Blog Section -->
+    <section class="py-24 bg-white relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="text-[#bb9b6b] font-bold tracking-widest uppercase text-sm mb-4 block"><?php echo __('blog_home_tag'); ?></span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
+                    <?php echo __('blog_home_title'); ?>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <?php
+                // Load latest 3 posts
+                if (file_exists('data/posts.php')) {
+                    include 'data/posts.php';
+                    $latest_posts = array_slice($BLOG_POSTS, 0, 3);
+
+                    foreach ($latest_posts as $post):
+                        ?>
+                        <a href="<?php echo url('post?id=' . $post['slug']); ?>"
+                            class="group block bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100">
+                            <div class="relative h-60 overflow-hidden">
+                                <img src="<?php echo asset_url($post['image']); ?>" alt="<?php echo $post['title']; ?>"
+                                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60">
+                                </div>
+                                <div class="absolute bottom-4 left-4">
+                                    <span
+                                        class="bg-[#bb9b6b] text-white text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wide">
+                                        <?php echo $post['category']; ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-8">
+                                <div
+                                    class="flex items-center gap-2 text-xs text-slate-400 mb-4 font-medium uppercase tracking-wider">
+                                    <i data-lucide="calendar" class="w-3 h-3 text-[#bb9b6b]"></i>
+                                    <?php echo date('d M Y', strtotime($post['date'])); ?>
+                                </div>
+                                <h3
+                                    class="text-xl font-serif font-bold text-slate-900 group-hover:text-[#bb9b6b] transition-colors mb-3 leading-tight min-h-[3.5em]">
+                                    <?php echo $post['title']; ?>
+                                </h3>
+                                <p class="text-slate-500 line-clamp-2 text-sm leading-relaxed mb-6">
+                                    <?php echo $post['excerpt']; ?>
+                                </p>
+                                <span
+                                    class="text-[#bb9b6b] text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+                                    <?php echo __('blog_read_more'); ?> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </span>
+                            </div>
+                        </a>
+                        <?php
+                    endforeach;
+                }
+                ?>
+            </div>
+
+            <div class="text-center">
+                <a href="<?php echo url('blog.php'); ?>"
+                    class="inline-flex items-center gap-2 text-slate-900 font-bold border-b-2 border-[#bb9b6b] pb-1 hover:text-[#bb9b6b] transition-colors uppercase tracking-wider text-sm">
+                    Ver Todos os Artigos <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- WhatsApp Lead Capture -->
     <section class="py-20 bg-[#bb9b6b] relative overflow-hidden">

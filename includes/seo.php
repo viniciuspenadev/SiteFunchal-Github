@@ -3,29 +3,62 @@
 
 <!-- SEO Meta Tags -->
 <?php
-$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+// Global protocol and host detection
+$protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? "https" : "http";
 $host = $_SERVER['HTTP_HOST'];
-$script = basename($_SERVER['PHP_SELF']);
+$current_url = "$protocol://$host" . $_SERVER['REQUEST_URI'];
+
+// Base URL for canonicals (remove query strings for clean SEO)
+$clean_url = strtok($current_url, '?');
+include 'includes/schema.php';
 ?>
-<link rel="alternate" hreflang="pt-br" href="<?php echo "$protocol://$host/funchal/$script"; ?>" />
-<link rel="alternate" hreflang="en" href="<?php echo "$protocol://$host/funchal/en/$script"; ?>" />
 
-<title><?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados'; ?></title>
+<!-- Primary Meta Tags -->
+<title><?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium'; ?></title>
+<meta name="title"
+    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium'; ?>">
 <meta name="description"
-    content="<?php echo isset($pageDesc) ? $pageDesc : 'Distribuidora de Pescados e Frutos do Mar Premium em São Paulo.'; ?>">
+    content="<?php echo isset($pageDesc) ? $pageDesc : 'A Funchal Pescados é referência em distribuição de pescados e frutos do mar premium em São Paulo. Qualidade, frescor e logística de elite para o seu negócio.'; ?>">
 <meta name="keywords"
-    content="comprar salmão, peixaria delivery, frutos do mar atacado, camarão preço, lagosta, funchal pescados">
-<meta name="robots" content="index, follow">
+    content="distribuidora de pescados, frutos do mar premium, salmão atacado sp, fornecedor de frutos do mar, peixaria de alta gastronomia, funchal pescados">
+<meta name="author" content="Funchal Pescados">
 
-<!-- Fonts -->
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="<?php echo $clean_url; ?>">
+<meta property="og:title"
+    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium'; ?>">
+<meta property="og:description"
+    content="<?php echo isset($pageDesc) ? $pageDesc : 'Distribulção de elite de pescados e frutos do mar premium em São Paulo.'; ?>">
+<meta property="og:image" content="<?php echo asset_url('assets/img/og-share.jpg'); ?>">
+<meta property="og:site_name" content="Funchal Pescados">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="<?php echo $clean_url; ?>">
+<meta property="twitter:title"
+    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium'; ?>">
+<meta property="twitter:description"
+    content="<?php echo isset($pageDesc) ? $pageDesc : 'Distribulção de elite de pescados e frutos do mar premium em São Paulo.'; ?>">
+<meta property="twitter:image" content="<?php echo asset_url('assets/img/og-share.jpg'); ?>">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="<?php echo $clean_url; ?>" />
+
+<!-- Language Alternates for Google (SEO Bilingue) -->
+<link rel="alternate" hreflang="pt-br" href="<?php echo url($_SERVER['PHP_SELF'], 'pt'); ?>" />
+<link rel="alternate" hreflang="en" href="<?php echo url($_SERVER['PHP_SELF'], 'en'); ?>" />
+<link rel="alternate" hreflang="x-default" href="<?php echo url($_SERVER['PHP_SELF'], 'pt'); ?>" />
+
+<!-- Fonts Performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<!-- Tailwind CSS (Local Standalone) -->
+<script src="<?php echo asset_url('assets/js/tailwind-standalone.js'); ?>"></script>
 <script>
     tailwind.config = {
         theme: {
@@ -51,10 +84,15 @@ $script = basename($_SERVER['PHP_SELF']);
     }
 </script>
 
-<!-- Lucide Icons -->
-<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Lucide Icons (Local) -->
+<script src="<?php echo asset_url('assets/js/lucide.min.js'); ?>"></script>
 
 <style>
+    /* Critical performance adjustments */
+    body {
+        font-display: swap;
+    }
+
     ::-webkit-scrollbar {
         width: 8px;
     }

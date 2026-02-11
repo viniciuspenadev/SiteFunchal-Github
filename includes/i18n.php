@@ -33,27 +33,52 @@ $base_url = rtrim($base_url, '/\\');
 
 // 3. Helper Function
 if (!function_exists('__')) {
-    function __($key)
+    function __($key, $default = null)
     {
         global $dictionary;
-        return isset($dictionary[$key]) ? $dictionary[$key] : $key;
+        if (isset($dictionary[$key])) {
+            return $dictionary[$key];
+        }
+        return ($default !== null) ? $default : $key;
     }
 }
 
 // 4. Helper for Links
 if (!function_exists('url')) {
-    function url($path = '')
+    function url($path = '', $forcedLang = null)
     {
         global $lang, $base_url;
-        // Clean path (remove leading slash)
-        $path = ltrim($path, '/');
+        $targetLang = ($forcedLang !== null) ? $forcedLang : $lang;
 
-        // If default lang (pt), return normal root path
-        if ($lang === 'pt') {
+        // Clean path (remove leading slash and .php extension)
+        // If it's a full system path from $_SERVER['PHP_SELF'], we need just the filename
+        $path = basename($path);
+        $path = preg_replace('/\.php$/', '', $path);
+
+        // Preserve IDs for dynamic pages (vaga, post)
+        // Check if we are currently on a dynamic page and preserve the ID in the link
+        if (($path === 'vaga' || $path === 'post') && isset($_GET['id'])) {
+            $path = $path . "/" . $_GET['id'];
+        }
+
+        // Handle path-based IDs in input (if provided as "vaga?id=xxx")
+        if (preg_match('/^(vaga|post)\.php\?id=([^&]+)/', $path, $matches)) {
+            $path = $matches[1] . "/" . $matches[2];
+        } elseif (preg_match('/^(vaga|post)\?id=([^&]+)/', $path, $matches)) {
+            $path = $matches[1] . "/" . $matches[2];
+        }
+
+        // Handle empty path (root)
+        if (empty($path) || $path === 'index') {
+            $path = '';
+        }
+
+        // If target lang is default (pt), return normal root path
+        if ($targetLang === 'pt') {
             return $base_url . "/" . $path;
         }
 
-        // If english, prefix with /en/
+        // If target lang is english, prefix with /en/
         return $base_url . "/en/" . $path;
     }
 }
@@ -72,6 +97,10 @@ if (!function_exists('asset_url')) {
     function asset_url($path = '')
     {
         global $base_url;
+        // If it's already a full URL, return as is
+        if (strpos($path, 'http://') === 0 || strpos($path, 'https://') === 0) {
+            return $path;
+        }
         // Always return path relative to root, ignoring /en/
         $path = ltrim($path, '/');
         return $base_url . "/" . $path;

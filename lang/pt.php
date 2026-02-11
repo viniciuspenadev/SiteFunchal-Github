@@ -1,8 +1,8 @@
 <?php
 return [
     // SEO
-    'meta_title_home' => 'Funchal Pescados | Distribuidora Premium',
-    'meta_desc_home' => 'A melhor distribuidora de pescados e frutos do mar de São Paulo.',
+    'meta_title_home' => 'Funchal Pescados | Distribuidora de Pescados e Frutos do Mar Premium',
+    'meta_desc_home' => 'Distribuidora de pescados e frutos do mar premium em São Paulo. Fornecemos salmão, camarão e bacalhau com logística de excelência para alta gastronomia.',
 
     // Navbar
     'nav_home' => 'Home',
@@ -10,6 +10,8 @@ return [
     'nav_logistics' => 'Logística',
     'nav_about' => 'Quem Somos',
     'nav_contact' => 'Contato',
+    'nav_careers' => 'Trabalhe Conosco',
+    'nav_blog' => 'Blog',
     'nav_catalog' => 'Catálogo',
 
     // Hero
@@ -64,6 +66,7 @@ return [
     'wa_desc' => 'Junte-se a mais de 500 restaurantes em São Paulo e receba ofertas semanais, novidades frescas e preços especiais direto no seu WhatsApp.',
     'wa_placeholder' => 'Seu WhatsApp (DDD + Número)',
     'wa_btn' => 'Quero Receber',
+    'wa_floating_label' => 'Fale com um Consultor',
     'wa_security' => 'Seus dados estão 100% seguros conosco.',
 
     // Footer
@@ -74,6 +77,53 @@ return [
     'footer_news_placeholder' => 'Seu e-mail',
     'footer_news_btn' => 'Inscrever-se',
     'footer_rights' => '© 2024 Funchal Pescados. Todos os direitos reservados.',
+
+    // Blog Home section
+    'blog_home_tag' => 'Funchal Insights',
+    'blog_home_title' => 'Notícias e Tendências',
+    'blog_home_desc' => 'Mantenha-se atualizado com as últimas novidades do mercado de pescados, dicas de conservação e segredos gastronômicos.',
+    'blog_read_more' => 'Ler Artigo',
+    'blog_read_full' => 'Ler na íntegra',
+    'blog_load_more' => 'Carregar Mais Artigos',
+
+    // Careers / Trabalhe Conosco
+    'careers_tag' => 'Carreira & Oportunidades',
+    'careers_title' => 'Trabalhe Conosco',
+    'careers_desc' => 'Você busca excelência e quer fazer parte de uma história de tradição e qualidade? Venha integrar o time da Funchal Pescados.',
+    'careers_vagas_title' => 'Vagas Disponíveis',
+    'careers_vagas_desc' => 'Estamos sempre em busca de talentos que compartilham do nosso compromisso com a qualidade. Confira abaixo as posições abertas.',
+    'careers_no_vagas' => 'Nenhuma vaga aberta no momento.',
+    'careers_talent_bank' => 'Banco de Talentos',
+    'careers_talent_bank_desc' => 'Não encontrou a vaga ideal? Envie seu currículo para nosso banco de talentos. Estamos sempre em busca de profissionais excepcionais.',
+    'careers_send_cv' => 'Enviar Currículo',
+    'careers_questions' => 'Dúvidas sobre o processo? Entre em contato pelo email',
+
+    // Vaga Individual
+    'job_back' => 'Voltar para Vagas',
+    'job_published' => 'Publicado em',
+    'job_apply_now' => 'Candidatar-se Agora',
+    'job_about' => 'Sobre a Vaga',
+    'job_reqs' => 'Requisitos da Vaga',
+    'job_benefits' => 'Benefícios',
+    'job_form_title' => 'Candidatar-se para esta vaga',
+    'job_form_desc' => 'Preencha o formulário abaixo e anexe seu currículo. Nossa equipe de RH entrará em contato caso seu perfil se encaixe na oportunidade.',
+    'job_form_name' => 'Nome Completo *',
+    'job_form_phone' => 'Telefone / WhatsApp *',
+    'job_form_email' => 'E-mail *',
+    'job_form_linkedin' => 'LinkedIn (Opcional)',
+    'job_form_cv' => 'Currículo (PDF ou DOCX) *',
+    'job_form_cv_help' => 'Clique para upload ou arraste seu arquivo',
+    'job_form_cv_max' => 'Máximo 5MB',
+    'job_form_letter' => 'Carta de Apresentação (Opcional)',
+    'job_form_letter_placeholder' => 'Conte brevemente por que você é ideal para esta vaga...',
+    'job_form_send' => 'Enviar Candidatura',
+    'job_form_security' => 'Seus dados estão seguros e serão utilizados apenas para este processo seletivo.',
+    'job_summary_title' => 'Resumo da Oportunidade',
+    'job_summary_workload' => 'Carga Horária',
+    'job_summary_model' => 'Modelo de Trabalho',
+    'job_summary_model_inperson' => 'Presencial',
+    'job_summary_location' => 'Localização',
+    'job_summary_share' => 'Compartilhar Vaga',
 
     // Categories
     'cat_all' => 'Todos',
@@ -202,4 +252,13 @@ return [
     'chef_subtitle' => 'Seu assistente culinário especialista em frutos do mar.',
     'chef_greeting' => 'Olá! Eu sou o Chef Funchal. Como posso te ajudar hoje? Posso sugerir receitas, harmonizações ou dicas de preparo para nossos produtos.',
     'chef_placeholder' => 'Pergunte algo... (ex: "Como preparo um risoto de camarão?")',
+
+    // Post page specifics
+    'post_reading_time' => 'de leitura',
+    'post_by' => 'Por',
+    'post_author_role' => 'Especialista em Pescados',
+    'post_related_tags' => 'Tags Relacionadas',
+    'post_news_title' => 'Receba Insights Exclusivos',
+    'post_news_desc' => 'Inscreva-se em nossa newsletter para receber tendências de mercado, receitas exclusivas e novidades da Funchal Pescados diretamente no seu e-mail.',
+    'post_continue_reading' => 'Continue Lendo',
 ];
