@@ -1,34 +1,35 @@
 # Funchal Pescados - Universal .htaccess (Local & Production compatible)
 RewriteEngine On
 
-# Auto-detect RewriteBase (Optional but helpful for some environments)
-# RewriteBase /
-
-# 1. Force HTTPS and non-WWW (Canonical) - Only in Production
-RewriteCond %{HTTP_HOST} !^localhost [NC]
-RewriteCond %{HTTP_HOST} !^127\.0\.0\.1
-RewriteCond %{HTTPS} off [OR]
+# 1. Force non-WWW (Canonical)
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteRule ^(.*)$ https://funchalpescados.com.br/$1 [L,R=301]
 
-# 2. Sitemap Rewrite
+# 2. Force HTTPS (Safe for Proxies/Easypanel)
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{HTTP_HOST} !^127\.0\.0\.1
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3. Sitemap Rewrite
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
-# 3. Dynamic Routes: Jobs (Vagas)
+# 4. Dynamic Routes: Jobs (Vagas)
 RewriteRule ^vaga/([^/]+)/?$ vaga.php?id=$1 [L,QSA]
 RewriteRule ^en/vaga/([^/]+)/?$ vaga.php?id=$1&lang=en [L,QSA]
 
-# 4. Dynamic Routes: Blog Posts
+# 5. Dynamic Routes: Blog Posts
 RewriteRule ^post/([^/]+)/?$ post.php?id=$1 [L,QSA]
 RewriteRule ^en/post/([^/]+)/?$ post.php?id=$1&lang=en [L,QSA]
 
-# 5. Language Prefixes (Friendly URLs)
+# 6. Language Prefixes (Friendly URLs)
 # Handle /en/PAGE -> PAGE.php?lang=en
 RewriteRule ^en/([^/.]+)/?$ $1.php?lang=en [L,QSA]
 # Handle /en/ -> index.php?lang=en
 RewriteRule ^en/?$ index.php?lang=en [L,QSA]
 
-# 6. Friendly URLs without .php extension
+# 7. Friendly URLs without .php extension
 # Redirect PAGE.php to PAGE (to clean old URLs)
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
 RewriteRule ^ %1 [R=301,L]
@@ -39,13 +40,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^([^/.]+)/?$ $1.php [L]
 
-# 7. Security: Block sensitive files
+# 8. Security: Block sensitive files
 <FilesMatch "^(config|products_data|load_env|\.env|composer\.json)\.php$">
     Order Allow,Deny
     Deny from all
 </FilesMatch>
 
-# 8. Performance: GZIP Compression
+# 9. Performance: GZIP Compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
     AddOutputFilterByType DEFLATE text/html
@@ -58,7 +59,7 @@ RewriteRule ^([^/.]+)/?$ $1.php [L]
     AddOutputFilterByType DEFLATE application/x-javascript
 </IfModule>
 
-# 9. Performance: Browser Caching (Expires Headers)
+# 10. Performance: Browser Caching (Expires Headers)
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresDefault "access plus 1 month"
@@ -73,5 +74,5 @@ RewriteRule ^([^/.]+)/?$ $1.php [L]
     ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
-# 10. Performance: Disable ETags
+# 11. Performance: Disable ETags
 FileETag None
