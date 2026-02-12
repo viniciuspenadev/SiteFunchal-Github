@@ -5,13 +5,6 @@ function isActive($pageName)
     global $currentPage;
     return $currentPage === $pageName ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white';
 }
-
-// Logic for Language Switcher (Handle Blog Posts)
-$langTarget = $_SERVER['PHP_SELF'];
-// Check if we are on a blog post and have a valid post ID
-if (basename($_SERVER['PHP_SELF']) === 'post.php' && isset($post) && isset($post['id'])) {
-    $langTarget = 'post.php?id=' . $post['id'];
-}
 ?>
 <nav id="navbar"
     class="fixed w-full z-50 transition-all duration-300 py-4 <?php echo isset($isTransparent) && $isTransparent ? 'bg-transparent' : 'bg-slate-900 shadow-lg'; ?>">
@@ -48,12 +41,12 @@ if (basename($_SERVER['PHP_SELF']) === 'post.php' && isset($post) && isset($post
 
                 <!-- Language Switcher -->
                 <div class="flex items-center gap-3 border-l border-slate-700 pl-6 ml-2">
-                    <a href="<?php echo url($langTarget, 'pt'); ?>"
+                    <a href="<?php echo url($_SERVER['PHP_SELF'], 'pt'); ?>"
                         class="hover:opacity-80 transition-opacity <?php echo current_lang() === 'pt' ? 'opacity-100 scale-110' : 'opacity-50 grayscale hover:grayscale-0'; ?>"
                         title="Português">
                         <img src="https://flagcdn.com/w40/br.png" alt="PT-BR" class="w-6 h-auto rounded-sm shadow-sm">
                     </a>
-                    <a href="<?php echo url($langTarget, 'en'); ?>"
+                    <a href="<?php echo url($_SERVER['PHP_SELF'], 'en'); ?>"
                         class="hover:opacity-80 transition-opacity <?php echo current_lang() === 'en' ? 'opacity-100 scale-110' : 'opacity-50 grayscale hover:grayscale-0'; ?>"
                         title="English">
                         <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-6 h-auto rounded-sm shadow-sm">
@@ -90,11 +83,11 @@ if (basename($_SERVER['PHP_SELF']) === 'post.php' && isset($post) && isset($post
 
             <!-- Mobile Language Switcher (Simple) -->
             <div class="flex items-center gap-4 px-3 py-4 border-t border-slate-700 mt-2">
-                <a href="<?php echo url($langTarget, 'pt'); ?>"
+                <a href="<?php echo url($_SERVER['PHP_SELF'], 'pt'); ?>"
                     class="flex items-center gap-2 text-gray-300 hover:text-white">
                     <img src="https://flagcdn.com/w40/br.png" alt="PT-BR" class="w-5 h-auto rounded-sm"> Português
                 </a>
-                <a href="<?php echo url($langTarget, 'en'); ?>"
+                <a href="<?php echo url($_SERVER['PHP_SELF'], 'en'); ?>"
                     class="flex items-center gap-2 text-gray-300 hover:text-white">
                     <img src="https://flagcdn.com/w40/gb.png" alt="EN" class="w-5 h-auto rounded-sm"> English
                 </a>

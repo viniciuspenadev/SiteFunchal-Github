@@ -162,13 +162,13 @@ $isTransparent = true; // For transparent navbar on hero
                     <?php echo renderOverlay(__('prod_salmon_title'), __('prod_salmon_sub')); ?>
                 </a>
 
-                <!-- Secondary Feature 1 (Lobster) - Spans 2 cols, 1 row -->
+                <!-- Secondary Feature 1 (Scallops) - Spans 2 cols, 1 row -->
                 <a href="<?php echo url('produtos.php'); ?>"
                     class="relative group overflow-hidden rounded-2xl cursor-pointer col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-1 min-h-[250px]">
-                    <img src="https://plus.unsplash.com/premium_photo-1719611418025-07c08bf00a49?q=80&w=687&auto=format&fit=crop"
-                        alt="Lagosta Inteira Fresca - Funchal Pescados Premium"
+                    <img src="https://img.freepik.com/premium-photo/raw-scallops-steel-tray-with-herbs-wooden-background-top-view_89816-43015.jpg?w=1060"
+                        alt="Vieiras Canadenses Premium - Funchal Pescados"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <?php echo renderOverlay(__('prod_lobster_title'), __('prod_lobster_sub')); ?>
+                    <?php echo renderOverlay(__('prod_scallops_name'), __('prod_scallops_sub')); ?>
                 </a>
 
                 <!-- Secondary Feature 2 (Octopus) - Spans 1 col, 1 row -->

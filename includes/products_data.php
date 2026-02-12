@@ -39,13 +39,7 @@ return [
         'badge' => 'exclusive',
         'badge_color' => 'bg-purple-600',
     ],
-    [
-        'id' => 'lobster',
-        'category' => 'cat_crustaceans',
-        'category_slug' => 'crustaceans',
-        'image' => 'https://plus.unsplash.com/premium_photo-1719611418025-07c08bf00a49?q=80&w=687&auto=format&fit=crop',
-        'badge' => null,
-    ],
+
     [
         'id' => 'cod',
         'category' => 'cat_salted_fish',

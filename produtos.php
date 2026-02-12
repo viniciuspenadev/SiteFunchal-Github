@@ -21,13 +21,13 @@ $products = include 'includes/products_data.php'; // Load Data
         foreach ($products as $prod):
             $name = __('prod_' . $prod['id'] . '_name');
             ?>
-                    {
-                      "@type": "ListItem",
-                      "position": <?php echo $count++; ?>,
-                      "url": "<?php echo url('produtos'); ?>",
-                      "name": "<?php echo $name; ?>",
-                      "image": "<?php echo $prod['image']; ?>"
-                    }<?php echo ($count <= count($products)) ? ',' : ''; ?>
+                        {
+                          "@type": "ListItem",
+                          "position": <?php echo $count++; ?>,
+                          "url": "<?php echo url('produtos'); ?>",
+                          "name": "<?php echo $name; ?>",
+                          "image": "<?php echo $prod['image']; ?>"
+                        }<?php echo ($count <= count($products)) ? ',' : ''; ?>
         <?php endforeach; ?>
       ]
     }
@@ -49,10 +49,12 @@ $products = include 'includes/products_data.php'; // Load Data
 
             <!-- Products Header -->
             <div class="text-center mb-12 animate-fade-in-up">
-                <span
-                    class="text-[#bb9b6b] font-bold tracking-widest uppercase text-sm mb-4 block animate-fade-in"><?php echo __('nav_catalog'); ?></span>
+                <span class="text-[#bb9b6b] font-bold tracking-widest uppercase text-sm mb-4 block animate-fade-in">
+                    <?php echo __('nav_catalog'); ?>
+                </span>
                 <h1 class="text-4xl md:text-6xl font-serif font-bold text-white mb-6">
-                    <?php echo __('prod_catalog_title'); ?></h1>
+                    <?php echo __('prod_catalog_title'); ?>
+                </h1>
                 <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
                     <?php echo __('prod_catalog_desc'); ?>
                 </p>
@@ -67,22 +69,34 @@ $products = include 'includes/products_data.php'; // Load Data
                     <div class="flex space-x-2" id="category-filters">
                         <button
                             class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-[#bb9b6b] text-white shadow-lg active-filter hover:scale-105"
-                            data-category="all"><?php echo __('cat_all'); ?></button>
+                            data-category="all">
+                            <?php echo __('cat_all'); ?>
+                        </button>
                         <button
                             class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white border border-slate-600"
-                            data-category="<?php echo __('cat_fresh_fish'); ?>"><?php echo __('cat_fresh_fish'); ?></button>
+                            data-category="<?php echo __('cat_fresh_fish'); ?>">
+                            <?php echo __('cat_fresh_fish'); ?>
+                        </button>
                         <button
                             class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white border border-slate-600"
-                            data-category="<?php echo __('cat_crustaceans'); ?>"><?php echo __('cat_crustaceans'); ?></button>
+                            data-category="<?php echo __('cat_crustaceans'); ?>">
+                            <?php echo __('cat_crustaceans'); ?>
+                        </button>
                         <button
                             class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white border border-slate-600"
-                            data-category="<?php echo __('cat_mollusks'); ?>"><?php echo __('cat_mollusks'); ?></button>
+                            data-category="<?php echo __('cat_mollusks'); ?>">
+                            <?php echo __('cat_mollusks'); ?>
+                        </button>
                         <button
                             class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white border border-slate-600"
-                            data-category="<?php echo __('cat_salted_fish'); ?>"><?php echo __('cat_salted_fish'); ?></button>
+                            data-category="<?php echo __('cat_salted_fish'); ?>">
+                            <?php echo __('cat_salted_fish'); ?>
+                        </button>
                         <button
                             class="filter-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white border border-slate-600"
-                            data-category="<?php echo __('cat_specials'); ?>"><?php echo __('cat_specials'); ?></button>
+                            data-category="<?php echo __('cat_specials'); ?>">
+                            <?php echo __('cat_specials'); ?>
+                        </button>
                     </div>
                 </div>
 
@@ -136,7 +150,8 @@ $products = include 'includes/products_data.php'; // Load Data
                                 class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                 <button
                                     class="btn-quote bg-[#bb9b6b] text-white px-6 py-2 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg flex items-center gap-2 hover:bg-[#a68859]">
-                                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> <?php echo __('prod_quote'); ?>
+                                    <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                                    <?php echo __('prod_quote'); ?>
                                 </button>
                             </div>
                             <div class="absolute top-3 left-3">
@@ -155,8 +170,9 @@ $products = include 'includes/products_data.php'; // Load Data
                                 <?php echo $desc; ?>
                             </p>
                             <div class="pt-4 border-t border-slate-700/50 flex items-center justify-between">
-                                <span
-                                    class="text-xs text-slate-500 font-medium uppercase tracking-wide"><?php echo __('prod_available'); ?></span>
+                                <span class="text-xs text-slate-500 font-medium uppercase tracking-wide">
+                                    <?php echo __('prod_available'); ?>
+                                </span>
                                 <button
                                     class="btn-details text-[#bb9b6b] hover:text-[#d4b98c] text-sm font-medium flex items-center gap-1 transition-colors">
                                     <?php echo __('prod_details'); ?> <i data-lucide="chevron-right" class="w-4 h-4"></i>

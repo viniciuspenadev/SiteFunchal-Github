@@ -22,7 +22,8 @@
                             class="hover:text-[#bb9b6b] transition-colors"><?php echo __('nav_home'); ?></a></li>
                     <li><a href="<?php echo url('produtos.php'); ?>"
                             class="hover:text-[#bb9b6b] transition-colors"><?php echo __('nav_products'); ?></a></li>
-                    <li><a href="#" class="hover:text-[#bb9b6b] transition-colors"><?php echo __('nav_about'); ?></a>
+                    <li><a href="<?php echo url('produtos.php'); ?>"
+                            class="hover:text-[#bb9b6b] transition-colors"><?php echo __('nav_products'); ?></a></li>
                     </li>
                     <li><a href="#" class="hover:text-[#bb9b6b] transition-colors"><?php echo __('nav_contact'); ?></a>
                     </li>
