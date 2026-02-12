@@ -1,6 +1,53 @@
 <?php
 $BLOG_POSTS = [
     [
+        'id' => 'quaresma-food-service-2026',
+        'title' => 'Quaresma no Food Service: Como transformar a alta demanda em lucro real',
+        'slug' => 'quaresma-food-service-2026',
+        'excerpt' => 'Saiba como aproveitar a alta demanda de pescados na Quaresma para lucrar mais no Food Service com produtos premium e logística eficiente.',
+        'content' => '
+            <p class="lead text-xl text-slate-600 mb-8 font-serif italic">A Quaresma é, tradicionalmente, o período de maior movimentação para o setor de pescados no Brasil. Para o Food Service — que engloba restaurantes, hotéis e o varejo especializado — este não é apenas um momento de "pico de vendas", mas a oportunidade de fidelizar clientes que buscam qualidade superior durante a abstinência de carne vermelha.</p>
+
+            <p class="mb-6">Se o seu comércio está se preparando para este período em 2026, entender as tendências e garantir um fornecimento premium é o que separará o sucesso da simples operação.</p>
+
+            <h2 class="text-2xl font-serif font-bold text-slate-900 mt-10 mb-4">O Cenário de Oportunidade</h2>
+            <p class="mb-6">O consumo de peixes e frutos do mar cresce exponencialmente nestas semanas. No entanto, o consumidor moderno está mais exigente: ele não quer apenas "peixe", ele busca procedência, frescor e sabor.</p>
+            <p class="mb-6">Para bares e restaurantes, isso significa a chance de criar menus sazonais que elevam o ticket médio. Para o varejo, é o momento de destacar cortes nobres que atraem o público que prefere cozinhar em casa, mas não abre mão da sofisticação.</p>
+
+            <h2 class="text-2xl font-serif font-bold text-slate-900 mt-10 mb-4">O Diferencial do Pescado Premium Funchal</h2>
+            <p class="mb-6">Em um mercado com alta demanda, o maior risco para o empreendedor é a oscilação na qualidade ou falhas na logística de entrega. É aqui que a Funchal Pescados se destaca como o parceiro ideal para o seu negócio:</p>
+
+            <ul class="list-none space-y-4 mb-8">
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-[#bb9b6b] flex-shrink-0"></i>
+                    <div>
+                        <strong class="text-slate-900">Padronização Superior:</strong>
+                        <span class="text-slate-600">Nossos pescados passam por processos rigorosos de seleção. Você recebe o que comprou, com o mesmo padrão de corte e frescor em cada entrega.</span>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-[#bb9b6b] flex-shrink-0"></i>
+                    <div>
+                        <strong class="text-slate-900">Portfólio Estratégico:</strong>
+                        <span class="text-slate-600">Oferecemos desde os itens essenciais de alto giro até opções premium que permitem uma margem de lucro maior no prato final.</span>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-[#bb9b6b] flex-shrink-0"></i>
+                    <div>
+                        <strong class="text-slate-900">Logística Inteligente:</strong>
+                        <span class="text-slate-600">Sabemos que no Food Service, o tempo é um ingrediente crítico. Nossa operação é desenhada para garantir que o produto chegue na temperatura correta e no prazo combinado, evitando rupturas de estoque no seu pior momento.</span>
+                    </div>
+                </li>
+            </ul>
+        ',
+        'image' => 'assets/img/blog/quaresma-fish.webp',
+        'author' => 'Equipe Funchal',
+        'date' => '2026-02-12',
+        'category' => 'Mercado',
+        'read_time' => '4 min'
+    ],
+    [
         'id' => 'tendencias-mercado-pescados-2025',
         'title' => 'Tendências do Mercado de Pescados para 2025',
         'slug' => 'tendencias-mercado-pescados-2025',

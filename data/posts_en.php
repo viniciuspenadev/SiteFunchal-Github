@@ -1,6 +1,53 @@
 <?php
 $BLOG_POSTS = [
     [
+        'id' => 'quaresma-food-service-2026',
+        'title' => 'Lent in Food Service: How to Transform High Demand into Real Profit',
+        'slug' => 'lent-food-service-2026',
+        'excerpt' => 'Learn how to leverage the high demand for seafood during Lent to increase profits in Food Service with premium products and efficient logistics.',
+        'content' => '
+            <p class="lead text-xl text-slate-600 mb-8 font-serif italic">Lent is traditionally the busiest period for the seafood sector in Brazil. For Food Service — which includes restaurants, hotels, and specialized retail — this is not just a "sales peak" moment, but an opportunity to build loyalty with customers seeking superior quality during the red meat abstinence.</p>
+
+            <p class="mb-6">If your business is preparing for this period in 2026, understanding trends and ensuring a premium supply is what will separate success from simple operation.</p>
+
+            <h2 class="text-2xl font-serif font-bold text-slate-900 mt-10 mb-4">The Scenario of Opportunity</h2>
+            <p class="mb-6">Consumption of fish and seafood grows exponentially in these weeks. However, the modern consumer is more demanding: they don\'t just want "fish", they seek provenance, freshness, and flavor.</p>
+            <p class="mb-6">For bars and restaurants, this means the chance to create seasonal menus that raise the average ticket. For retail, it is the moment to highlight noble cuts that attract the public who prefer to cook at home but do not give up sophistication.</p>
+
+            <h2 class="text-2xl font-serif font-bold text-slate-900 mt-10 mb-4">The Funchal Premium Seafood Differential</h2>
+            <p class="mb-6">In a market with high demand, the biggest risk for the entrepreneur is oscillation in quality or failures in delivery logistics. This is where Funchal Pescados stands out as the ideal partner for your business:</p>
+
+            <ul class="list-none space-y-4 mb-8">
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-[#bb9b6b] flex-shrink-0"></i>
+                    <div>
+                        <strong class="text-slate-900">Superior Standardization:</strong>
+                        <span class="text-slate-600">Our seafood goes through rigorous selection processes. You receive what you bought, with the same standard of cut and freshness in every delivery.</span>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-[#bb9b6b] flex-shrink-0"></i>
+                    <div>
+                        <strong class="text-slate-900">Strategic Portfolio:</strong>
+                        <span class="text-slate-600">We offer everything from high-turnover essentials to premium options that allow a higher profit margin on the final dish.</span>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <i data-lucide="check-circle" class="w-6 h-6 text-[#bb9b6b] flex-shrink-0"></i>
+                    <div>
+                        <strong class="text-slate-900">Intelligent Logistics:</strong>
+                        <span class="text-slate-600">We know that in Food Service, time is a critical ingredient. Our operation is designed to ensure that the product arrives at the correct temperature and on the agreed deadline, avoiding stock ruptures at your worst moment.</span>
+                    </div>
+                </li>
+            </ul>
+        ',
+        'image' => 'assets/img/blog/quaresma-fish.webp',
+        'author' => 'Funchal Team',
+        'date' => '2026-02-12',
+        'category' => 'Market',
+        'read_time' => '4 min'
+    ],
+    [
         'id' => 'tendencias-mercado-pescados-2025',
         'title' => 'Seafood Market Trends for 2025',
         'slug' => 'seafood-market-trends-2025',
