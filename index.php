@@ -102,24 +102,7 @@ $isTransparent = true; // For transparent navbar on hero
     </section>
 
     <!-- Trusted Partners Strip -->
-    <section class="border-y border-slate-200 bg-slate-100 py-12 mb-20 overflow-hidden mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm font-bold text-[#bb9b6b] uppercase tracking-widest mb-8">
-                <?php echo __('partners_title'); ?>
-            </p>
-            <div
-                class="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Placeholders for Partner Logos -->
-                <div class="h-8 md:h-10 flex items-center text-slate-400 font-serif text-xl font-bold">FASANO</div>
-                <div class="h-8 md:h-10 flex items-center text-slate-400 font-serif text-xl font-bold">MANÍ</div>
-                <div class="h-8 md:h-10 flex items-center text-slate-400 font-serif text-xl font-bold">DOM</div>
-                <div class="h-8 md:h-10 flex items-center text-slate-400 font-serif text-xl font-bold">A CASA DO PORCO
-                </div>
-                <div class="h-8 md:h-10 flex items-center text-slate-400 font-serif text-xl font-bold">JUN SAKAMOTO
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Featured Products: Premium Bento Grid -->
     <section class="py-24 bg-white">

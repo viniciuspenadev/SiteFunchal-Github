@@ -13,6 +13,11 @@
                 <p class="text-slate-400 text-sm leading-relaxed mb-6">
                     <?php echo __('footer_desc'); ?>
                 </p>
+                <div class="flex gap-4 mb-6">
+                    <a href="https://instagram.com/funchalpescados" target="_blank"
+                        class="text-slate-400 hover:text-[#bb9b6b] transition-colors"><i data-lucide="instagram"
+                            class="w-5 h-5"></i></a>
+                </div>
             </div>
             <!-- Navigation -->
             <div>
@@ -66,11 +71,12 @@
         </div>
         <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-slate-500 text-xs"><?php echo __('footer_rights'); ?></p>
-            <div class="flex gap-4">
-                <a href="#" class="text-slate-500 hover:text-[#bb9b6b] transition-colors"><i data-lucide="instagram"
-                        class="w-5 h-5"></i></a>
-                <a href="#" class="text-slate-500 hover:text-[#bb9b6b] transition-colors"><i data-lucide="facebook"
-                        class="w-5 h-5"></i></a>
+            <div class="flex items-center gap-6">
+                <a href="#" class="flex items-center group opacity-80 hover:opacity-100 transition-opacity">
+                    <i data-lucide="zap" class="h-5 w-5 text-white mr-2 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-bold text-lg text-white tracking-tight">BlueDigital<span
+                            class="font-light text-white">Hub</span></span>
+                </a>
             </div>
         </div>
     </div>

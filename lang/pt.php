@@ -45,6 +45,7 @@ return [
     'prod_view_details' => 'Ver Detalhes',
     'prod_salmon_title' => 'Salmão Chileno Premium',
     'prod_salmon_sub' => 'O Favorito dos Chefs',
+    'prod_scallops_sub' => 'Gigantes e Adocicadas',
     'prod_lobster_title' => 'Lagosta Inteira',
     'prod_lobster_sub' => 'Sofisticação',
     'prod_octopus_title' => 'Polvo Espanhol',
@@ -76,7 +77,7 @@ return [
     'footer_news_title' => 'Novidades',
     'footer_news_placeholder' => 'Seu e-mail',
     'footer_news_btn' => 'Inscrever-se',
-    'footer_rights' => '© 2024 Funchal Pescados. Todos os direitos reservados.',
+    'footer_rights' => '© 2026 Funchal Pescados. Todos os direitos reservados.',
 
     // Blog Home section
     'blog_home_tag' => 'Funchal Insights',
