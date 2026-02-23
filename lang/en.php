@@ -261,4 +261,18 @@ return [
     'post_news_title' => 'Receive Exclusive Insights',
     'post_news_desc' => 'Subscribe to our newsletter to receive market trends, exclusive recipes and Funchal Seafoods news directly in your email.',
     'post_continue_reading' => 'Continue Reading',
+
+    // Security Modal
+    'sec_banner_title' => 'Avoid Scams: Payment Security',
+    'sec_banner_link' => 'Click for important guidelines',
+    'sec_modal_title' => 'Payment Security Guidelines',
+    'sec_modal_official_canal' => 'Official Channel',
+    'sec_modal_official_canal_desc' => 'Our invoices arrive only at the time of delivery together with the delivery note of the order.',
+    'sec_modal_check_data' => 'Verify the Data',
+    'sec_modal_check_data_desc' => 'Before confirming the payment (in the app or ATM), verify that the beneficiary is <strong>Funchal Entreposto de Pescados e Derivados Ltda</strong> and that the CNPJ corresponds to ours: <strong>05.999.365/0001-95</strong>.',
+    'sec_modal_whatsapp' => 'WhatsApp/E-mail',
+    'sec_modal_whatsapp_desc' => 'We do not send invoices via WhatsApp or unknown E-mails without prior request from the client.',
+    'sec_modal_questions' => 'Doubts?',
+    'sec_modal_questions_desc' => 'If you notice any divergence in the value or in the emitting bank, speak with our finance department immediately by phone <strong>(11) 2090-6100</strong>.',
+    'sec_modal_close' => 'Understood',
 ];

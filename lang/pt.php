@@ -262,4 +262,18 @@ return [
     'post_news_title' => 'Receba Insights Exclusivos',
     'post_news_desc' => 'Inscreva-se em nossa newsletter para receber tendências de mercado, receitas exclusivas e novidades da Funchal Pescados diretamente no seu e-mail.',
     'post_continue_reading' => 'Continue Lendo',
+
+    // Modal de Segurança
+    'sec_banner_title' => 'Evite Golpes: Segurança nos Pagamentos',
+    'sec_banner_link' => 'Clique para orientações importantes',
+    'sec_modal_title' => 'Orientações de Segurança nos Pagamentos',
+    'sec_modal_official_canal' => 'Canal Oficial',
+    'sec_modal_official_canal_desc' => 'Nossos boletos chegam apenas no ato da entrega juntamente com a nota fiscal do pedido.',
+    'sec_modal_check_data' => 'Confira os Dados',
+    'sec_modal_check_data_desc' => 'Antes de confirmar o pagamento (no app ou caixa eletrônico), verifique se o beneficiário é <strong>Funchal Entreposto de Pescados e Derivados Ltda</strong> e se o CNPJ corresponde ao nosso: <strong>05.999.365/0001-95</strong>.',
+    'sec_modal_whatsapp' => 'WhatsApp/E-mail',
+    'sec_modal_whatsapp_desc' => 'Não enviamos boletos por WhatsApp ou E-mail desconhecidos sem solicitação prévia do cliente.',
+    'sec_modal_questions' => 'Dúvidas?',
+    'sec_modal_questions_desc' => 'Caso note qualquer divergência no valor ou no banco emissor, fale com nosso financeiro imediatamente pelo telefone <strong>(11) 2090-6100</strong>.',
+    'sec_modal_close' => 'Entendido',
 ];

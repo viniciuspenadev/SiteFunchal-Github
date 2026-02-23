@@ -6,8 +6,26 @@ function isActive($pageName)
     return $currentPage === $pageName ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white';
 }
 ?>
+<!-- Security Alert Banner -->
+<div id="security-banner" class="bg-[#bb9b6b] text-white py-2 px-4 shadow-inner relative z-[60]">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-4 text-center">
+        <div class="flex items-center gap-2 cursor-pointer trigger-security-modal group">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-white animate-pulse"></i>
+            <span
+                class="text-[10px] font-semibold tracking-wide uppercase hover:underline decoration-white/50 underline-offset-4">
+                <?php echo __('sec_banner_title'); ?>
+            </span>
+            <span
+                class="hidden md:inline-block text-[10px] bg-white/20 px-2 py-0.5 rounded-full font-medium ml-2 group-hover:bg-white/30 transition-colors">
+                <?php echo __('sec_banner_link'); ?>
+            </span>
+        </div>
+    </div>
+</div>
+
 <nav id="navbar"
-    class="fixed w-full z-50 transition-all duration-300 py-4 <?php echo isset($isTransparent) && $isTransparent ? 'bg-transparent' : 'bg-slate-900 shadow-lg'; ?>">
+    class="absolute w-full z-50 transition-all duration-300 <?php echo isset($isTransparent) && $isTransparent ? 'bg-transparent' : 'bg-slate-900 shadow-lg'; ?>">
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
             <!-- Logo -->
@@ -99,21 +117,34 @@ function isActive($pageName)
 <script>
     // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-slate-900', 'shadow-lg');
+    const banner = document.getElementById('security-banner');
+
+    const handleScroll = () => {
+        const bannerHeight = banner ? banner.offsetHeight : 0;
+
+        if (window.scrollY > bannerHeight) {
+            navbar.style.position = 'fixed';
+            navbar.style.top = '0';
+            navbar.classList.add('bg-slate-900', 'shadow-lg', 'py-4');
             navbar.classList.remove('bg-transparent');
         } else {
-            // Only make transparent if it was initially meant to be transparent (set via PHP logic if needed, or default behavior for home)
-            // For safety in this include, we might rely on the class list.
-            // But if we want specific page behavior (like home transparent at top), we need that logic.
-            // Simplified: Always opaque on scroll, check page for top behavior.
+            navbar.style.position = 'absolute';
+            navbar.style.top = bannerHeight + 'px';
+            navbar.classList.remove('py-4'); // Remove extra padding when at top
+
             if (document.body.getAttribute('data-transparent-nav') === 'true') {
                 navbar.classList.remove('bg-slate-900', 'shadow-lg');
                 navbar.classList.add('bg-transparent');
+            } else {
+                navbar.classList.add('bg-slate-900', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
             }
         }
-    });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // Re-calculate on resize
+    handleScroll(); // Initial check
 
     // Mobile Menu
     const btn = document.getElementById('mobile-menu-btn');
@@ -124,3 +155,5 @@ function isActive($pageName)
         });
     }
 </script>
+
+<?php include 'includes/security_modal.php'; ?>

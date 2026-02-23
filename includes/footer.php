@@ -74,7 +74,7 @@
             <div class="flex items-center gap-6">
                 <a href="#" class="flex items-center group opacity-80 hover:opacity-100 transition-opacity">
                     <i data-lucide="zap" class="h-5 w-5 text-white mr-2 group-hover:scale-110 transition-transform"></i>
-                    <span class="font-bold text-lg text-white tracking-tight">BlueDigital<span
+                    <span class="font-bold text-sm text-white tracking-tight">BlueDigital<span
                             class="font-light text-white">Hub</span></span>
                 </a>
             </div>

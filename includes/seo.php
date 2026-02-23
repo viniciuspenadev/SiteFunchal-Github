@@ -2,6 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- SEO Meta Tags -->
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="<?php echo asset_url('favicon.png'); ?>">
+
 <?php
 // Global protocol and host detection
 $protocol = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') ? "https" : "http";
@@ -14,9 +17,11 @@ include 'includes/schema.php';
 ?>
 
 <!-- Primary Meta Tags -->
-<title><?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium'; ?></title>
+<title>
+    <?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium em São Paulo'; ?>
+</title>
 <meta name="title"
-    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium'; ?>">
+    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium em São Paulo'; ?>">
 <meta name="description"
     content="<?php echo isset($pageDesc) ? $pageDesc : 'A Funchal Pescados é referência em distribuição de pescados e frutos do mar premium em São Paulo. Qualidade, frescor e logística de elite para o seu negócio.'; ?>">
 <meta name="keywords"
@@ -27,7 +32,7 @@ include 'includes/schema.php';
 <meta property="og:type" content="website">
 <meta property="og:url" content="<?php echo $clean_url; ?>">
 <meta property="og:title"
-    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium'; ?>">
+    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium em São Paulo'; ?>">
 <meta property="og:description"
     content="<?php echo isset($pageDesc) ? $pageDesc : 'Distribulção de elite de pescados e frutos do mar premium em São Paulo.'; ?>">
 <meta property="og:image" content="<?php echo asset_url('assets/img/og-share.jpg'); ?>">
@@ -37,7 +42,7 @@ include 'includes/schema.php';
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="<?php echo $clean_url; ?>">
 <meta property="twitter:title"
-    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium'; ?>">
+    content="<?php echo isset($pageTitle) ? $pageTitle : 'Funchal Pescados | Pescados e Frutos do Mar Premium em São Paulo'; ?>">
 <meta property="twitter:description"
     content="<?php echo isset($pageDesc) ? $pageDesc : 'Distribulção de elite de pescados e frutos do mar premium em São Paulo.'; ?>">
 <meta property="twitter:image" content="<?php echo asset_url('assets/img/og-share.jpg'); ?>">
