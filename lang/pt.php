@@ -172,11 +172,11 @@ return [
     'prod_paella_temp' => 'Congelado (-18°C)',
     'prod_paella_pairing' => 'Paella, Cazuela de Mariscos',
 
-    'prod_bluefin_name' => 'Atum Bluefin (Toro)',
-    'prod_bluefin_desc' => 'O "rei dos atuns". Carne vermelha escura, alto teor de gordura entremeada e sabor amanteigado.',
-    'prod_bluefin_origin' => 'Espanha (Mediterrâneo)',
-    'prod_bluefin_temp' => 'Resfriado (0°C a 4°C)',
-    'prod_bluefin_pairing' => 'Sashimi, Tartar, Selado',
+    'prod_atum_name' => 'Atum',
+    'prod_atum_desc' => 'Carne vermelha escura, alto teor de gordura entremeada e sabor amanteigado.',
+    'prod_atum_origin' => 'Espanha (Mediterrâneo)',
+    'prod_atum_temp' => 'Resfriado (0°C a 4°C)',
+    'prod_atum_pairing' => 'Sashimi, Tartar, Selado',
 
     'prod_lobster_name' => 'Lagosta Inteira',
     'prod_lobster_desc' => 'Lagosta inteira com casca. Carne branca e firme, ideal para apresentações sofisticadas.',

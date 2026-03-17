@@ -32,7 +32,7 @@ return [
         'badge' => null,
     ],
     [
-        'id' => 'bluefin',
+        'id' => 'atum',
         'category' => 'cat_fresh_fish',
         'category_slug' => 'fresh_fish',
         'image' => 'https://images.unsplash.com/photo-1562513763-ddbd3a4609cf?q=80&w=687&auto=format&fit=crop',
@@ -45,13 +45,6 @@ return [
         'category' => 'cat_salted_fish',
         'category_slug' => 'salted_fish',
         'image' => 'https://img.freepik.com/premium-photo/baked-cod-with-olive-oil_538646-3213.jpg?w=1480',
-        'badge' => null,
-    ],
-    [
-        'id' => 'oysters',
-        'category' => 'cat_mollusks',
-        'category_slug' => 'mollusks',
-        'image' => 'https://img.freepik.com/free-photo/delicious-oysters-ready-eat-still-life_23-2150202979.jpg',
         'badge' => null,
     ],
     [
@@ -75,13 +68,5 @@ return [
         'image' => 'https://img.freepik.com/premium-photo/raw-scallops-steel-tray-with-herbs-wooden-background-top-view_89816-43015.jpg?w=1060',
         'badge' => 'chefs_choice',
         'badge_color' => 'bg-indigo-600',
-    ],
-    [
-        'id' => 'caviar',
-        'category' => 'cat_specials',
-        'category_slug' => 'specials',
-        'image' => 'https://img.freepik.com/free-photo/high-angle-spoons-with-caviar-fish_23-2148494037.jpg',
-        'badge' => 'luxury',
-        'badge_color' => 'bg-yellow-600',
     ],
 ];

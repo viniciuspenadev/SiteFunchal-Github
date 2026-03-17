@@ -171,11 +171,11 @@ return [
     'prod_paella_temp' => 'Frozen (-18°C)',
     'prod_paella_pairing' => 'Paella, Seafood Casserole',
 
-    'prod_bluefin_name' => 'Bluefin Tuna (Toro)',
-    'prod_bluefin_desc' => 'The "King of Tunas". Dark red meat, high fat content, and buttery flavor.',
-    'prod_bluefin_origin' => 'Spain (Mediterranean)',
-    'prod_bluefin_temp' => 'Chilled (0°C to 4°C)',
-    'prod_bluefin_pairing' => 'Sashimi, Tartare, Seared',
+    'prod_atum_name' => 'Tuna',
+    'prod_atum_desc' => 'Dark red meat, high fat content, and buttery flavor.',
+    'prod_atum_origin' => 'Spain (Mediterranean)',
+    'prod_atum_temp' => 'Chilled (0°C to 4°C)',
+    'prod_atum_pairing' => 'Sashimi, Tartare, Seared',
 
     'prod_lobster_name' => 'Whole Lobster',
     'prod_lobster_desc' => 'Whole lobster with shell. White and firm meat, ideal for sophisticated presentations.',
