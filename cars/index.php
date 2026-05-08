@@ -108,7 +108,7 @@ $pageDesc = 'Sua distribuidora de pescados e frutos do mar premium em São Paulo
             </div>
 
             <h1 class="text-3xl font-serif font-bold text-white mb-2 tracking-wide">Funchal Pescados</h1>
-            <p class="text-gold uppercase tracking-widest text-xs font-bold mb-4 drop-shadow-md">Alta Gastronomia em SP
+            <p class="text-gold uppercase tracking-widest text-xs font-bold mb-4 drop-shadow-md">Qualidade desde a origem
             </p>
             <p
                 class="text-slate-300 text-sm max-w-[280px] font-medium leading-relaxed bg-slate-900/50 p-2 rounded-lg backdrop-blur-sm border border-slate-700/50">
@@ -121,7 +121,7 @@ $pageDesc = 'Sua distribuidora de pescados e frutos do mar premium em São Paulo
         <div class="w-full flex flex-col gap-5 relative z-20">
 
             <!-- WhatsApp -->
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20QR%20Code%20dos%20carros%20e%20gostaria%20de%20fazer%20um%20pedido."
+            <a href="https://wa.me/5511940370256?text=Ol%C3%A1!%20Vim%20pelo%20QR%20Code%20dos%20carros%20e%20gostaria%20de%20fazer%20um%20pedido."
                 target="_blank"
                 class="glass-panel btn-hover-effect flex items-center p-4 rounded-2xl group cursor-pointer">
                 <div
