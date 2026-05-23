@@ -84,6 +84,9 @@
 
 <?php include 'includes/whatsapp_btn.php'; ?>
 
+<!-- Blue Digital Hub Chat Widget -->
+<script src="https://kora.bluedigitalhub.com.br/w/blue-digital-hub" async></script>
+
 <script>
     lucide.createIcons();
 </script>
