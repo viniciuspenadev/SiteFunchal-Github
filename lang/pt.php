@@ -18,7 +18,7 @@ return [
     'hero_since' => 'Desde 1994',
     'hero_title_prefix' => 'A Excelência',
     'hero_title_suffix_static' => 'do Mar para',
-    'hero_desc' => 'Fornecemos os pescados mais frescos e frutos do mar selecionados para os restaurantes mais exigentes de São Paulo.',
+    'hero_desc' => 'Fornecemos pescados e frutos do mar para os restaurantes mais exigentes do Estado de São Paulo.',
     'hero_cta_catalog' => 'Ver Catálogo Premium',
     'hero_cta_contact' => 'Fale com um Consultor',
 

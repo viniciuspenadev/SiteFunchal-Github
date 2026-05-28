@@ -151,6 +151,26 @@ $currentPage = 'trabalhe-conosco';
                             </li>
                         <?php endforeach; ?>
                     </ul>
+
+                    <?php if (!empty($currentJob['differentials'])): ?>
+                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-4 mt-8">Diferenciais</h3>
+                        <ul class="space-y-3 mb-8">
+                            <?php foreach ($currentJob['differentials'] as $diff): ?>
+                                <li class="flex items-start gap-3 text-slate-600">
+                                    <i data-lucide="star" class="w-5 h-5 text-[#bb9b6b] mt-0.5 flex-shrink-0"></i>
+                                    <span><?php echo $diff; ?></span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+
+                    <?php if (!empty($currentJob['education'])): ?>
+                        <h3 class="text-xl font-serif font-bold text-slate-900 mb-4 mt-8">Escolaridade</h3>
+                        <div class="flex items-center gap-3 p-4 bg-slate-50 rounded-lg border border-slate-100 text-slate-700">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-[#bb9b6b]"></i>
+                            <span class="font-medium"><?php echo $currentJob['education']; ?></span>
+                        </div>
+                    <?php endif; ?>
                 </div>
 
                 <!-- Application Form -->
@@ -170,22 +190,24 @@ $currentPage = 'trabalhe-conosco';
                             </p>
                         </div>
 
-                        <form
-                            onsubmit="event.preventDefault(); alert('Obrigado! Sua candidatura foi enviada com sucesso. Em breve entraremos em contato.');"
-                            class="space-y-6">
+                        <form id="formCandidatura" enctype="multipart/form-data" class="space-y-6">
+                            <input type="hidden" name="vaga" value="<?php echo htmlspecialchars($currentJob['title']); ?>">
+
+                            <!-- Feedback -->
+                            <div id="formFeedback" class="hidden rounded-lg p-4 text-sm font-medium"></div>
 
                             <!-- Personal Info -->
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-sm font-medium text-slate-400 mb-2">Nome Completo *</label>
-                                    <input type="text" required
+                                    <input type="text" name="nome" required
                                         class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none focus:ring-1 focus:ring-[#bb9b6b] transition-colors placeholder-slate-600"
                                         placeholder="Seu nome">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-slate-400 mb-2">Telefone / WhatsApp
                                         *</label>
-                                    <input type="tel" required
+                                    <input type="tel" name="telefone" required
                                         class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none focus:ring-1 focus:ring-[#bb9b6b] transition-colors placeholder-slate-600"
                                         placeholder="(11) 99999-9999">
                                 </div>
@@ -194,14 +216,14 @@ $currentPage = 'trabalhe-conosco';
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-sm font-medium text-slate-400 mb-2">E-mail *</label>
-                                    <input type="email" required
+                                    <input type="email" name="email" required
                                         class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none focus:ring-1 focus:ring-[#bb9b6b] transition-colors placeholder-slate-600"
                                         placeholder="seu@email.com">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-slate-400 mb-2">LinkedIn
                                         (Opcional)</label>
-                                    <input type="url"
+                                    <input type="url" name="linkedin"
                                         class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none focus:ring-1 focus:ring-[#bb9b6b] transition-colors placeholder-slate-600"
                                         placeholder="https://linkedin.com/in/voce">
                                 </div>
@@ -212,13 +234,14 @@ $currentPage = 'trabalhe-conosco';
                                 <label class="block text-sm font-medium text-slate-400 mb-2">Currículo (PDF ou DOCX)
                                     *</label>
                                 <div class="relative">
-                                    <input type="file" required accept=".pdf,.doc,.docx"
-                                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20">
-                                    <div
+                                    <input type="file" name="curriculo" id="inputCurriculo" required accept=".pdf,.doc,.docx"
+                                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
+                                        onchange="mostrarNomeArquivo(this)">
+                                    <div id="uploadArea"
                                         class="w-full bg-slate-900 border border-dashed border-slate-600 rounded-lg px-4 py-8 text-center hover:border-[#bb9b6b] transition-colors group">
                                         <i data-lucide="upload-cloud"
                                             class="w-8 h-8 text-slate-500 mx-auto mb-2 group-hover:text-[#bb9b6b] transition-colors"></i>
-                                        <p class="text-sm text-slate-400 group-hover:text-slate-300">
+                                        <p id="uploadText" class="text-sm text-slate-400 group-hover:text-slate-300">
                                             <span class="text-[#bb9b6b] font-bold">Clique para upload</span> ou arraste
                                             seu arquivo
                                         </p>
@@ -230,15 +253,19 @@ $currentPage = 'trabalhe-conosco';
                             <div>
                                 <label class="block text-sm font-medium text-slate-400 mb-2">Carta de Apresentação
                                     (Opcional)</label>
-                                <textarea rows="4"
+                                <textarea rows="4" name="carta"
                                     class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none focus:ring-1 focus:ring-[#bb9b6b] transition-colors placeholder-slate-600"
                                     placeholder="Conte brevemente por que você é ideal para esta vaga..."></textarea>
                             </div>
 
-                            <button type="submit"
-                                class="w-full bg-[#bb9b6b] hover:bg-[#a68859] text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2 transition-all transform hover:-translate-y-1">
-                                <?php echo __('job_form_send'); ?>
-                                <i data-lucide="send" class="w-5 h-5"></i>
+                            <button type="submit" id="btnEnviar"
+                                class="w-full bg-[#bb9b6b] hover:bg-[#a68859] text-white font-bold py-4 px-8 rounded-lg shadow-lg flex items-center justify-center gap-2 transition-all transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none">
+                                <span id="btnTexto"><?php echo __('job_form_send'); ?></span>
+                                <i data-lucide="send" class="w-5 h-5" id="btnIcone"></i>
+                                <svg id="btnLoading" class="hidden animate-spin w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                                </svg>
                             </button>
 
                             <p class="text-center text-xs text-slate-500 mt-4">
@@ -246,6 +273,76 @@ $currentPage = 'trabalhe-conosco';
                                 utilizados apenas para este processo seletivo.
                             </p>
                         </form>
+
+                        <script>
+                        function mostrarNomeArquivo(input) {
+                            const uploadText = document.getElementById('uploadText');
+                            const uploadArea = document.getElementById('uploadArea');
+                            if (input.files && input.files[0]) {
+                                uploadText.innerHTML = '<span class="text-green-400 font-bold">✓ ' + input.files[0].name + '</span>';
+                                uploadArea.classList.remove('border-slate-600');
+                                uploadArea.classList.add('border-green-500/50');
+                            }
+                        }
+
+                        document.getElementById('formCandidatura').addEventListener('submit', async function(e) {
+                            e.preventDefault();
+
+                            const btn = document.getElementById('btnEnviar');
+                            const btnTexto = document.getElementById('btnTexto');
+                            const btnIcone = document.getElementById('btnIcone');
+                            const btnLoading = document.getElementById('btnLoading');
+                            const feedback = document.getElementById('formFeedback');
+
+                            // Loading state
+                            btn.disabled = true;
+                            btnTexto.textContent = 'Enviando...';
+                            btnIcone.classList.add('hidden');
+                            btnLoading.classList.remove('hidden');
+                            feedback.classList.add('hidden');
+
+                            try {
+                                const formData = new FormData(this);
+                                const response = await fetch('enviar-candidatura.php', {
+                                    method: 'POST',
+                                    body: formData
+                                });
+
+                                const data = await response.json();
+
+                                feedback.classList.remove('hidden', 'bg-green-500/20', 'text-green-300', 'bg-red-500/20', 'text-red-300');
+
+                                if (data.success) {
+                                    feedback.classList.add('bg-green-500/20', 'text-green-300');
+                                    feedback.innerHTML = '<i data-lucide="check-circle" class="w-4 h-4 inline mr-1"></i>' + data.message;
+                                    this.reset();
+                                    // Reset upload area
+                                    const uploadText = document.getElementById('uploadText');
+                                    const uploadArea = document.getElementById('uploadArea');
+                                    uploadText.innerHTML = '<span class="text-[#bb9b6b] font-bold">Clique para upload</span> ou arraste seu arquivo';
+                                    uploadArea.classList.remove('border-green-500/50');
+                                    uploadArea.classList.add('border-slate-600');
+                                } else {
+                                    feedback.classList.add('bg-red-500/20', 'text-red-300');
+                                    feedback.innerHTML = '<i data-lucide="alert-circle" class="w-4 h-4 inline mr-1"></i>' + data.message;
+                                }
+
+                                // Re-render lucide icons no feedback
+                                if (window.lucide) lucide.createIcons();
+
+                            } catch (error) {
+                                feedback.classList.remove('hidden');
+                                feedback.classList.add('bg-red-500/20', 'text-red-300');
+                                feedback.textContent = 'Erro de conexão. Tente novamente.';
+                            }
+
+                            // Reset button
+                            btn.disabled = false;
+                            btnTexto.textContent = '<?php echo __("job_form_send"); ?>';
+                            btnIcone.classList.remove('hidden');
+                            btnLoading.classList.add('hidden');
+                        });
+                        </script>
                     </div>
                 </div>
             </div>

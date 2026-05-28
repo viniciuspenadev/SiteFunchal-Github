@@ -55,7 +55,7 @@ $currentPage = 'trabalhe-conosco';
         </div>
 
         <!-- Jobs Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
             <?php if (!empty($JOBS)): ?>
                 <?php foreach ($JOBS as $job): ?>
                     <a href="<?php echo url('vaga.php?id=' . $job['id']); ?>" class="group">

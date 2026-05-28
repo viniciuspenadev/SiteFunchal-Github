@@ -187,38 +187,96 @@ $currentPage = 'contact';
                 <div class="w-full md:w-3/5 p-8 md:p-12 bg-slate-800">
                     <h2 class="text-2xl font-serif font-bold text-white mb-6"><?php echo __('contact_form_title'); ?>
                     </h2>
-                    <form class="space-y-6">
+                    <form id="formContato" class="space-y-6">
+                        <!-- Feedback -->
+                        <div id="contatoFeedback" class="hidden rounded-lg p-4 text-sm font-medium"></div>
+
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label
                                     class="block text-sm font-medium text-slate-400 mb-2"><?php echo __('form_name'); ?></label>
-                                <input type="text"
+                                <input type="text" name="nome" required
                                     class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none transition-colors">
                             </div>
                             <div>
                                 <label
                                     class="block text-sm font-medium text-slate-400 mb-2"><?php echo __('form_company'); ?></label>
-                                <input type="text"
+                                <input type="text" name="empresa"
                                     class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none transition-colors">
                             </div>
                         </div>
                         <div>
                             <label
                                 class="block text-sm font-medium text-slate-400 mb-2"><?php echo __('form_email'); ?></label>
-                            <input type="email"
+                            <input type="email" name="email" required
                                 class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none transition-colors">
                         </div>
                         <div>
                             <label
                                 class="block text-sm font-medium text-slate-400 mb-2"><?php echo __('form_message'); ?></label>
-                            <textarea rows="4"
+                            <textarea rows="4" name="mensagem" required
                                 class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:border-[#bb9b6b] focus:outline-none transition-colors"></textarea>
                         </div>
-                        <button type="button"
-                            class="bg-[#bb9b6b] hover:bg-[#a68859] text-white font-bold py-4 px-8 rounded-lg shadow-lg w-full md:w-auto transition-all">
-                            <?php echo __('form_send_btn'); ?>
+                        <button type="submit" id="btnContato"
+                            class="bg-[#bb9b6b] hover:bg-[#a68859] text-white font-bold py-4 px-8 rounded-lg shadow-lg w-full md:w-auto transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+                            <span id="btnContatoTexto"><?php echo __('form_send_btn'); ?></span>
+                            <i data-lucide="send" class="w-4 h-4" id="btnContatoIcone"></i>
+                            <svg id="btnContatoLoading" class="hidden animate-spin w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                            </svg>
                         </button>
                     </form>
+
+                    <script>
+                    document.getElementById('formContato').addEventListener('submit', async function(e) {
+                        e.preventDefault();
+
+                        const btn = document.getElementById('btnContato');
+                        const btnTexto = document.getElementById('btnContatoTexto');
+                        const btnIcone = document.getElementById('btnContatoIcone');
+                        const btnLoading = document.getElementById('btnContatoLoading');
+                        const feedback = document.getElementById('contatoFeedback');
+
+                        // Loading
+                        btn.disabled = true;
+                        btnTexto.textContent = 'Enviando...';
+                        btnIcone.classList.add('hidden');
+                        btnLoading.classList.remove('hidden');
+                        feedback.classList.add('hidden');
+
+                        try {
+                            const formData = new FormData(this);
+                            const response = await fetch('enviar-contato.php', {
+                                method: 'POST',
+                                body: formData
+                            });
+
+                            const data = await response.json();
+
+                            feedback.classList.remove('hidden', 'bg-green-500/20', 'text-green-300', 'bg-red-500/20', 'text-red-300');
+
+                            if (data.success) {
+                                feedback.classList.add('bg-green-500/20', 'text-green-300');
+                                feedback.innerHTML = '✓ ' + data.message;
+                                this.reset();
+                            } else {
+                                feedback.classList.add('bg-red-500/20', 'text-red-300');
+                                feedback.innerHTML = '⚠ ' + data.message;
+                            }
+                        } catch (error) {
+                            feedback.classList.remove('hidden');
+                            feedback.classList.add('bg-red-500/20', 'text-red-300');
+                            feedback.textContent = 'Erro de conexão. Tente novamente.';
+                        }
+
+                        // Reset button
+                        btn.disabled = false;
+                        btnTexto.textContent = '<?php echo __("form_send_btn"); ?>';
+                        btnIcone.classList.remove('hidden');
+                        btnLoading.classList.add('hidden');
+                    });
+                    </script>
                 </div>
             </div>
         </section>

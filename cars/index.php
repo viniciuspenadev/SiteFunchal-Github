@@ -108,11 +108,12 @@ $pageDesc = 'Sua distribuidora de pescados e frutos do mar premium em São Paulo
             </div>
 
             <h1 class="text-3xl font-serif font-bold text-white mb-2 tracking-wide">Funchal Pescados</h1>
-            <p class="text-gold uppercase tracking-widest text-xs font-bold mb-4 drop-shadow-md">Qualidade desde a origem
+            <p class="text-gold uppercase tracking-widest text-xs font-bold mb-4 drop-shadow-md">Qualidade desde a
+                origem
             </p>
             <p
                 class="text-slate-300 text-sm max-w-[280px] font-medium leading-relaxed bg-slate-900/50 p-2 rounded-lg backdrop-blur-sm border border-slate-700/50">
-                Fornecemos os pescados mais frescos e frutos do mar selecionados para os restaurantes mais exigentes de
+                Fornecemos pescados e frutos do mar para os restaurantes mais exigentes do Estado de
                 São Paulo.
             </p>
         </div>
@@ -120,6 +121,25 @@ $pageDesc = 'Sua distribuidora de pescados e frutos do mar premium em São Paulo
         <!-- Links Section -->
         <div class="w-full flex flex-col gap-5 relative z-20">
 
+            <!-- Ligar Agora -->
+            <a href="tel:+551120906100"
+                class="glass-panel btn-hover-effect flex items-center p-4 rounded-2xl group cursor-pointer">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-sky-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl pointer-events-none">
+                </div>
+                <div
+                    class="w-14 h-14 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center mr-4 shrink-0 transition-transform group-hover:scale-110 shadow-lg shadow-sky-900/20">
+                    <i data-lucide="phone" class="w-7 h-7"></i>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="font-bold text-lg text-white mb-0.5">Televendas</h3>
+                    <p class="text-xs text-slate-400">(11) 2090-6100</p>
+                </div>
+                <div class="w-8 flex justify-end">
+                    <i data-lucide="chevron-right"
+                        class="w-5 h-5 text-gold group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
             <!-- WhatsApp -->
             <a href="https://wa.me/5511940370256?text=Ol%C3%A1!%20Vim%20pelo%20QR%20Code%20dos%20carros%20e%20gostaria%20de%20fazer%20um%20pedido."
                 target="_blank"
@@ -141,7 +161,9 @@ $pageDesc = 'Sua distribuidora de pescados e frutos do mar premium em São Paulo
                 </div>
             </a>
 
-            <!-- Catálogo -->
+
+
+            <!-- Catálogo (oculto)
             <a href="../produtos.php"
                 class="glass-panel btn-hover-effect flex items-center p-4 rounded-2xl group cursor-pointer">
                 <div
@@ -160,6 +182,7 @@ $pageDesc = 'Sua distribuidora de pescados e frutos do mar premium em São Paulo
                         class="w-5 h-5 text-gold group-hover:translate-x-1 transition-transform"></i>
                 </div>
             </a>
+            -->
 
             <!-- E-mail de Contato -->
             <a href="mailto:contato@funchalpescados.com.br"

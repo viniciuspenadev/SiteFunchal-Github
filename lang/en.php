@@ -18,7 +18,7 @@ return [
     'hero_since' => 'Since 1994',
     'hero_title_prefix' => 'Excellence',
     'hero_title_suffix_static' => 'from the Sea to',
-    'hero_desc' => 'We supply the freshest fish and selected seafood for the most demanding restaurants in São Paulo.',
+    'hero_desc' => 'We supply fish and seafood for the most demanding restaurants in the State of São Paulo.',
     'hero_cta_catalog' => 'View Premium Catalog',
     'hero_cta_contact' => 'Talk to a Consultant',
 
