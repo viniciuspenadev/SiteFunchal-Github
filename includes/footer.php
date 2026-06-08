@@ -84,6 +84,34 @@
 
 <?php include 'includes/whatsapp_btn.php'; ?>
 
+<style>
+    /* Camada de proteção global para imagens (previne interações diretas, cliques e arrastes) */
+    img.protected-image, 
+    .product-card img, 
+    .hero-image-container img {
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-touch-callout: none;
+        pointer-events: none;
+    }
+</style>
+
 <script>
     lucide.createIcons();
+
+    // Bloqueia clique com botão direito nas imagens e arrastar globalmente
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('img').forEach(img => {
+            img.setAttribute('draggable', 'false');
+            
+            img.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+            });
+            
+            img.addEventListener('dragstart', (e) => {
+                e.preventDefault();
+            });
+        });
+    });
 </script>

@@ -139,7 +139,7 @@ $isTransparent = true; // For transparent navbar on hero
                 <!-- Main Feature (Salmon) - Spans 2 cols, 2 rows -->
                 <a href="<?php echo url('produtos.php'); ?>"
                     class="relative group overflow-hidden rounded-2xl cursor-pointer col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-2 min-h-[300px]">
-                    <img src="https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=2070&auto=format&fit=crop"
+                    <img src="<?php echo asset_url('assets/img/products/Filé de Salmao 4_5-c.webp'); ?>"
                         alt="Funchal Pescados - Salmão Chileno Premium para Alta Gastronomia"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <?php echo renderOverlay(__('prod_salmon_title'), __('prod_salmon_sub')); ?>
@@ -148,16 +148,16 @@ $isTransparent = true; // For transparent navbar on hero
                 <!-- Secondary Feature 1 (Scallops) - Spans 2 cols, 1 row -->
                 <a href="<?php echo url('produtos.php'); ?>"
                     class="relative group overflow-hidden rounded-2xl cursor-pointer col-span-1 md:col-span-2 lg:col-span-2 lg:row-span-1 min-h-[250px]">
-                    <img src="https://img.freepik.com/premium-photo/raw-scallops-steel-tray-with-herbs-wooden-background-top-view_89816-43015.jpg?w=1060"
+                    <img src="<?php echo asset_url('assets/img/products/Veira 20_30 S_coral-b.webp'); ?>"
                         alt="Vieiras Canadenses Premium - Funchal Pescados"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <?php echo renderOverlay(__('prod_scallops_name'), __('prod_scallops_sub')); ?>
+                    <?php echo renderOverlay(__('prod_veira_20_30_s_coral_name'), __('prod_scallops_sub')); ?>
                 </a>
 
                 <!-- Secondary Feature 2 (Octopus) - Spans 1 col, 1 row -->
                 <a href="<?php echo url('produtos.php'); ?>"
                     class="relative group overflow-hidden rounded-2xl cursor-pointer col-span-1 lg:col-span-1 lg:row-span-1 min-h-[250px]">
-                    <img src="https://images.unsplash.com/photo-1485827329522-c625acce0067?q=80&w=1170&auto=format&fit=crop"
+                    <img src="<?php echo asset_url('assets/img/products/Polvo limpo e eviserado 2_3-b.webp'); ?>"
                         alt="Polvo Espanhol Premium - Importação Direta Funchal"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
                     <?php echo renderOverlay(__('prod_octopus_title'), __('prod_octopus_sub')); ?>

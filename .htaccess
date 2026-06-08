@@ -76,3 +76,11 @@ RewriteRule ^([^/.]+)/?$ $1.php [L]
 
 # 11. Performance: Disable ETags
 FileETag None
+
+# 12. Security: Hotlink Protection
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?funchalpescados.com.br [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://localhost [NC]
+RewriteCond %{HTTP_REFERER} !^http(s)?://127\.0\.0\.1 [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [NC,F,L]
