@@ -46,7 +46,7 @@ function isActive($pageName)
                 <!-- <a href="<?php echo url('chef_ia.php'); ?>"
                     class="text-sm font-medium px-4 py-2 rounded bg-[#bb9b6b] text-white hover:bg-[#a68859] transition-colors">Chef
                     IA</a> -->
-                <a href="#"
+                <a href="<?php echo url('quem-somos.php'); ?>"
                     class="text-sm font-medium transition-colors <?php echo isActive('about'); ?>"><?php echo __('nav_about'); ?></a>
                 <a href="<?php echo url('produtos.php'); ?>"
                     class="text-sm font-medium transition-colors <?php echo isActive('products'); ?>"><?php echo __('nav_products'); ?></a>
@@ -88,7 +88,7 @@ function isActive($pageName)
                 class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'home' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_home'); ?></a>
             <!-- <a href="<?php echo url('chef_ia.php'); ?>"
                 class="block px-3 py-2 rounded-md text-base font-medium bg-[#bb9b6b] text-white">Chef IA</a> -->
-            <a href="#"
+            <a href="<?php echo url('quem-somos.php'); ?>"
                 class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'about' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_about'); ?></a>
             <a href="<?php echo url('produtos.php'); ?>"
                 class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700 <?php echo $currentPage === 'products' ? 'text-[#bb9b6b]' : 'text-gray-300 hover:text-white'; ?>"><?php echo __('nav_products'); ?></a>

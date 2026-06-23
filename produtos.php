@@ -1,7 +1,7 @@
 <?php
 include 'includes/i18n.php'; // Ensure i18n is loaded
 $pageTitle = "Catálogo de Pescados | Funchal Pescados"; // Could be translated too but acceptable for now
-$pageDesc = "Confira nosso catálogo completo de salmão, camarão, bacalhau e peixes frescos.";
+$pageDesc = "Confira nosso catálogo completo de salmão, camarão, bacalhau e pescados premium.";
 $currentPage = 'products';
 $products = include 'includes/products_data.php'; // Load Data
 ?>
@@ -229,8 +229,8 @@ $products = include 'includes/products_data.php'; // Load Data
 
                     <!-- Close Button -->
                     <button type="button" id="close-modal-btn"
-                        class="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors">
-                        <i data-lucide="x" class="w-5 h-5"></i>
+                        class="absolute top-3 right-3 z-20 bg-slate-900/80 backdrop-blur-sm hover:bg-[#bb9b6b] text-white rounded-full p-2.5 transition-all duration-300 border border-slate-600 hover:border-[#bb9b6b] hover:scale-110 hover:rotate-90 shadow-lg hover:shadow-[#bb9b6b]/25">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
 
                     <!-- Modal Image (No Text Overlay) -->
