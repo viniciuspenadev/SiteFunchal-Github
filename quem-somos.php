@@ -176,8 +176,8 @@ $currentPage = 'about';
                                         <i data-lucide="award" class="w-6 h-6 text-[#bb9b6b]"></i>
                                     </div>
                                     <div>
-                                        <p class="text-[#bb9b6b] font-bold text-lg">S.I.F.</p>
-                                        <p class="text-slate-400 text-xs">Certificação Federal</p>
+                                        <p class="text-[#bb9b6b] font-bold text-lg">SISP</p>
+                                        <p class="text-slate-400 text-xs">Registro Industrial</p>
                                     </div>
                                 </div>
                             </div>

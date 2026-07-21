@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 return [
     // SEO
     'meta_title_home' => 'Funchal Pescados | Distribuidora de Pescados e Frutos do Mar Premium',
@@ -32,7 +32,7 @@ return [
     'feat_logistics_title' => 'Logística Própria',
     'feat_logistics_desc' => 'Frota refrigerada e monitorada para garantir a temperatura ideal até a sua cozinha.',
     'feat_quality_title' => 'Qualidade Premium',
-    'feat_quality_desc' => 'Seleção rigorosa de fornecedores nacionais e internacionais. Certificação S.I.F.',
+    'feat_quality_desc' => 'Seleção rigorosa de fornecedores nacionais e internacionais. Registro SISP.',
     'feat_consulting_title' => 'Atendimento Consultivo',
     'feat_consulting_desc' => 'Nossa equipe entende o seu cardápio e sugere os melhores produtos e safras.',
 
@@ -60,7 +60,7 @@ return [
     'stats_delivery_title' => 'Entrega em 24h',
     'stats_delivery_desc' => 'Logística própria otimizada para a Grande São Paulo. Pediu hoje, chegou amanhã.',
     'stats_quality_title' => 'Selos de Qualidade',
-    'stats_quality_desc' => 'Produtos certificados com S.I.F. e rastreabilidade total de origem.',
+    'stats_quality_desc' => 'Produtos certificados com SISP e rastreabilidade total de origem.',
 
     // WhatsApp Section
     'wa_title' => 'Tenha acesso à nossa Tabela Exclusiva',
@@ -453,8 +453,8 @@ return [
     'about_timeline_2_title' => 'Expansão Logística',
     'about_timeline_2_desc' => 'Investimento em frota refrigerada própria, garantindo a cadeia de frio controlada do fornecedor até a cozinha do cliente.',
     'about_timeline_3_year' => '2015',
-    'about_timeline_3_title' => 'Certificação S.I.F.',
-    'about_timeline_3_desc' => 'Conquista da certificação do Serviço de Inspeção Federal, atestando nosso compromisso com qualidade e rastreabilidade total.',
+    'about_timeline_3_title' => 'Registro SISP',
+    'about_timeline_3_desc' => 'Conquista do Registro de Estabelecimento Industrial (SISP), atestando nosso compromisso com qualidade e rastreabilidade total.',
     'about_timeline_4_year' => '2024',
     'about_timeline_4_title' => 'Referência em SP',
     'about_timeline_4_desc' => 'Reconhecidos como uma das principais distribuidoras de pescados premium do Estado de São Paulo, atendendo mais de 500 estabelecimentos.',

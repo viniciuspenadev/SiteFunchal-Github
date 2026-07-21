@@ -32,7 +32,7 @@ return [
     'feat_logistics_title' => 'Own Logistics',
     'feat_logistics_desc' => 'Refrigerated and monitored fleet to ensure ideal temperature up to your kitchen.',
     'feat_quality_title' => 'Premium Quality',
-    'feat_quality_desc' => 'Rigorous selection of national and international suppliers. S.I.F. Certification.',
+    'feat_quality_desc' => 'Rigorous selection of national and international suppliers. SISP Registration.',
     'feat_consulting_title' => 'Consultative Service',
     'feat_consulting_desc' => 'Our team understands your menu and suggests the best products and harvests.',
 
@@ -59,7 +59,7 @@ return [
     'stats_delivery_title' => '24h Delivery',
     'stats_delivery_desc' => 'Own logistics optimized for Greater São Paulo. Order today, arrive tomorrow.',
     'stats_quality_title' => 'Quality Seals',
-    'stats_quality_desc' => 'Certified products with S.I.F. and full origin traceability.',
+    'stats_quality_desc' => 'Certified products with SISP and full origin traceability.',
 
     // WhatsApp Section
     'wa_title' => 'Get access to our Exclusive List',
