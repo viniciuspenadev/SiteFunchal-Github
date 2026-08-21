@@ -46,7 +46,6 @@ $JOBS = [
             'Perfil responsável, organizado e comprometido.'
         ],
         'benefits' => [
-            'Auxílio-combustível;',
             'Vale-refeição.'
         ],
         'differentials' => [
